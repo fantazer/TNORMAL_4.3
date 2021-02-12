@@ -1,0 +1,32 @@
+mixin icon(name,cls)
+  svg(class=cls)
+    use(xlink:href="#" + name)
+
+//+checkbox('Выбрать пункт 1',true,disable)
+mixin checkbox(text,checked,className)
+  .check-el
+    label.style-label.style-label--checkbox(class = className )
+      input(type="checkbox" checked=checked  ? checked : false).style-input
+      .style-input-element
+        +icon("checked","icon")
+      .style-input-text !{text}
+
+
+//+radio('Выбрать пункт 1',"list","true",'disable')
+mixin radio(text,group,checked,className)
+  .check-el
+    label.style-label.style-label--radio(class = className)
+      input(type="radio" name=group checked=checked  ? checked : false).style-input
+      .style-input-element
+        .icon-radio
+      .style-input-text=text
+
+mixin incr(state,className='')
+  .incr(class= state ? className  +' incr--one' : className )
+    .incr__minus.incr__nav
+      +icon("minus","icon")
+    .incr__val
+      span=state ? 1 : 0
+      .incr__val-coner
+    .incr__plus.incr__nav
+      +icon("plus","icon")

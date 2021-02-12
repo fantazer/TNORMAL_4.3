@@ -1,0 +1,256 @@
+no-select()
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+link($color=#e5e5e5)
+	background-image: linear-gradient(to bottom, $color 0%, $color 100%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom
+	text-decoration: none
+	padding-bottom:4px
+	tr(all)
+	line-height: 1.6
+	&:hover
+		background-size: 0 1px
+
+filter()
+	position: absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+
+flex(a){
+	if(a=='mid'){
+		display: flex
+		justify-content: center
+		align-items: center
+	}
+	if(a==between){
+		display: flex
+		justify-content: space-between
+		align-items: center
+	}
+	if(a==around){
+		display: flex
+		justify-content: space-around
+		align-items: center
+	}
+}
+
+bgi(a){
+	background url('../img/'+a) no-repeat
+}
+
+br(a){
+	border-radius a
+}
+
+tr(a=all){
+	transition a .4s
+} 
+
+f()
+	display flex
+fl()
+	flex-flow column
+fw()
+	flex-wrap wrap
+	
+cp()
+	&:hover
+		cursor pointer
+		
+round()
+	border-radius 50%
+
+bsh()
+	box-shadow 0px 3px 8px #e3e3e3
+	
+up()
+	text-transform uppercase
+	
+placeholder(color)
+	input::-webkit-input-placeholder 
+		color:color
+	input::-moz-placeholder
+		color:color
+	input:-moz-placeholder
+		color:color
+	input:-ms-input-placeholder
+		color:color
+		
+//main cont
+center(val,pad)
+	*zoom: 1
+	width: auto
+	max-width: val
+	float: none
+	display: block
+	margin-right: auto
+	margin-left: auto
+	padding-left: 0
+	padding-right: 0
+	&:before,
+	&:after 
+		content: ''
+		display: table
+	&:after 
+		clear: both
+	position relative
+	width 100%
+	padding  0 pad
+	+above(val px)
+		width val px
+		
+hover-underline($border-size = 1px, $type = 'solid', $color = null)
+	border-bottom: $border-size unquote($type) transparent
+	&:hover
+		border-bottom: $border-size unquote($type) $color
+
+
+table($border = true, $striped = true, $condensed = false)
+	max-width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	width: 100%
+	margin-bottom: 18px
+
+	th, td
+		padding: 8px
+		line-height: 18px
+		text-align: left
+		vertical-align: top
+		border-top: 1px solid #ddd
+
+	th
+		font-weight: bold
+
+	thead th
+		vertical-align: bottom
+
+	thead:first-child tr th
+	thead:first-child tr td
+		border-top: 0
+
+	tbody + tbody
+		border-top: 2px solid #ddd
+
+	if $condensed
+		th, td
+			padding: 4px 5px
+
+	if $border
+		border: 1px solid #ddd
+		border-collapse: separate
+		*border-collapse: collapsed
+		border-radius: 4px
+
+		th + th, td + td, th + td, td + th
+			border-left: 1px solid #ddd
+
+		thead:first-child tr:first-child th
+		tbody:first-child tr:first-child th
+		tbody:first-child tr:first-child td
+			border-top: 0
+
+		thead:first-child tr:first-child th:first-child
+		tbody:first-child tr:first-child td:first-child
+			border-radius: 4px 0 0 0
+
+		thead:first-child tr:first-child th:last-child
+		tbody:first-child tr:first-child td:last-child
+			border-radius: 0 4px 0 0
+
+		thead:last-child tr:last-child th:first-child
+		tbody:last-child tr:last-child td:first-child
+			border-radius: 0 0 0 4px
+
+		thead:last-child tr:last-child th:last-child
+		tbody:last-child tr:last-child td:last-child
+			border-radius: 0 0 4px 0
+
+	if $striped
+		tbody tr:nth-child(odd) td
+		tbody tr:nth-child(odd) th
+			background-color: #f9f9f9
+
+		tbody tr:hover td
+		tbody tr:hover th
+			background-color: #f5f5f5
+
+
+size(numbers...)
+	regex = '^[^%]*%[^%]*$'
+	parsed = unit(numbers[0])
+	type = match(regex, parsed) ? '%' : 'px'
+
+	if length(numbers) > 1
+		parsedH = unit(numbers[1])
+		typeH = match(regex, parsedH) ? '%' : 'px'
+
+		width: unit(numbers[0], type)
+		height: unit(numbers[1], typeH)
+	else
+		width: unit(numbers, type)
+		height: unit(numbers, type)
+
+ellipsis($width = 100%)
+	white-space: nowrap
+	display: inline-block
+	max-width: $width
+	overflow: hidden
+	text-overflow: ellipsis
+	word-wrap: normal
+
+//link font
+font-url(file)
+	return '/fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+	@font-face
+		font-family family
+		src url(font-url(file + '.eot'))
+		src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+			url(font-url(file + '.woff')) format('woff'), 
+			url(font-url(file + '.ttf')) format('truetype'), 
+			url(font-url(file + '.svg#'+ family)) format('svg')
+		font-weight weight
+		font-style normal
+
+font(name,file,size)
+	@font-face
+		font-family: name
+		src: url('../fonts/'+file+'.woff2') format('woff2'),url('../fonts/'+file+'.woff') format('woff')
+		font-weight: size
+		font-style: normal
+
+//bg-full-size
+bg-full()
+	background-size cover
+	background-repeat no-repeat
+	background-position center center
+
+bsh-hover()
+	box-shadow 0px 3px 3px #e3e3e3
+	transition box-shadow .8s
+	&:hover
+		box-shadow 0 18px 32px #e3e3e3
+
+animateHide()
+	position absolute
+	left -9999px
+	opacity: 0
+	top 0
+
+animateShow()
+	position: initial
+	left initial
+	top initial
+	transition opacity .6s
+	opacity: 1

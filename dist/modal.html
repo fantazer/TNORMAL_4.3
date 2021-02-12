@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<!--create by ANATOLY KUZNETSOV-->
+<!--contact mail:kuznecovs45@gmail.com skype:an_kuznetcov-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--colors-tabs-->
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!--SEO-->
+    <title>Document</title>
+    <meta name="description" itemprop="description" content="" />
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style-edit.css" />
+</head>
+<!--+checkbox('Выбрать пункт 1',"checked",'disable')-->
+<!--+radio('Выбрать пункт 1',"list","true",'disable')-->
+
+<body>
+    <style type="text/css">
+        .btn-wrap {
+        		display: flex;
+        		flex-wrap: wrap;
+        		flex-flow: column;
+        		align-items: baseline;
+        	}
+        	.btn-wrap .btn--md {
+        		display: inline-block;
+        		margin-bottom: 20px;
+        	}
+        	
+        	@media only screen and (max-width: 640px) {
+        		.btn-wrap .btn--md{
+        			width: 100%;
+        		}
+        	}
+    </style>
+    <div class="page">
+        <!--block header-->
+        <!--block header end-->
+        <div class="content">
+            <div class="main-cont">
+                <p>Чтобы вызвать нужное окно добавь на элемент класс .modal-get и data-modal="имя окна"</p>
+                <p>Чтобы добавить метод закрытия окна по клику на элемент добавиь класс .modal-send</p>
+                <div class="btn-wrap">
+                    <div class="btn--md btn--mark modal-get" data-modal="order">Заявка | data-modal="code "</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--block footer-->
+    <!--block footer end-->
+    <div class="modal-layer">
+        <div class="modal-filter"></div>
+        <div class="modal-wrap">
+            <div class="modal" data-modal="order">
+                <div class="modal-content">
+                    <div class="modal-close">
+                        <svg class="icon">
+                            <use xlink:href="#close"></use>
+                        </svg>
+                    </div>
+                    <div class="modal-title">Оставьте заявку</div>
+                    <div class="modal-text">Обращаетесь к нам впервые?
+                        <br>Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!</div>
+                    <form class="validate-form" action="javascript:void(null);">
+                        <div class="input-cont">
+                            <div class="input-row">
+                                <div class="input-row__title"></div>
+                                <input class="input" type="text" placeholder="Ваше имя" />
+                            </div>
+                        </div>
+                        <div class="input-cont">
+                            <div class="input-row">
+                                <div class="input-row__title"></div>
+                                <input class="input" type="text" placeholder="Телефон" />
+                            </div>
+                        </div>
+                        <div class="login-remember">
+                            <div class="check-el">
+                                <label class="style-label style-label--checkbox">
+                                    <input class="style-input" type="checkbox" />
+                                    <div class="style-input-element">
+                                        <svg class="icon">
+                                            <use xlink:href="#checked"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="style-input-text">Я ознакомился с
+                                        <a href="#">политикой конфиденциальности</a>,
+                                        <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                </label>
+                            </div>
+                        </div>
+                        <input class="modal-send" type="submit" value="Отправить заявку" />
+                    </form>
+                </div>
+            </div>
+            <!--success message-->
+            <div class="modal" data-modal="true">
+                <div class="modal-content modal-content--true">
+                    <div class="modal-close">
+                        <svg class="icon">
+                            <use xlink:href="#close-fat"></use>
+                        </svg>
+                    </div>
+                    <svg class="icon icon-msg">
+                        <use xlink:href="#check-round"></use>
+                    </svg>
+                    <div class="modal-text-true">Сообщение отправленно</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="modal-get" href="#" data-modal="order">Открыть модальное окно</a>
+    <div class="cookie">
+        <!-- to show add class .cookie + .cookie--active-->
+        <div class="main-cont">
+            <div class="cookie-wrap">
+                <div class="cookie-text">Мы используем cookies для быстрой и удобной работы сайта. Продолжая пользоваться сайтом, вы принимаете
+                    <a class="link--mark" href="#">условия обработки</a>&nbsp;персональных данных</div>
+                <svg class="icon icon-close">
+                    <use xlink:href="#close"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script src="./js/combined.js"></script>
+    <script src="./js/add-on.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-edit.js"></script>
+</body>
+
+</html>

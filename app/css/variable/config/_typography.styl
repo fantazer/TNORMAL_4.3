@@ -1,0 +1,159 @@
+//  ============================ Typography ============================
+
+// calc font size
+for $listTypeItem in $listType
+	.type--{$listTypeItem[0]},.type--{$listTypeItem[1]}
+		+below(768px)
+			font-size $listTypeItem[2] px
+		font-size $listTypeItem[1] px
+// calc font size === end
+
+
+font('Nunito-Regular','Nunito', 400)
+font('Nunito-Bold','Nunito', 700)
+$font =  'Nunito', sans-serif
+
+.type--bold
+	font-weight bold
+
+.type--mid
+	text-align center
+
+.type--left
+	text-align left
+
+.type--right
+	text-align right
+
+h5
+	@extend .type--sm
+h4
+	@extend .type--main
+h3
+	@extend .type--md
+h2
+	@extend .type--lg
+h1
+	@extend .type--xl
+
+// link
+a
+	color $linkColor
+	text-decoration: none
+	tr()
+	&:hover
+		color darken($linkColor,20)
+	&:visiter
+		color darken($linkColor,30)
+.link--mark
+	color $mark
+	&:hover
+		color darken($mark,20)
+	&:visiter
+		color darken($mark,30)
+
+.link--main
+	color $linkColor
+	hover-underline($linkColor)
+	&:hover
+		color darken($linkColor,20)
+	&:visiter
+		color darken($linkColor,30)
+
+.link--text
+	color $linkColor
+	text-decoration underline
+	&:hover
+		text-decoration none
+// link === end
+
+
+p
+	@extend .type--main
+
+.text
+	color black
+	h1,h2,h3,h4,h5
+		margin 3.5rem 0 2rem
+	h1:first-of-type,
+	h2:first-of-type,
+	h3:first-of-type,
+	h4:first-of-type,
+	h5:first-of-type,
+	h6:first-of-type,
+	p
+		margin-top: 0!important
+	a:not(.btn--md):not(.btn--sm)
+		@extend .link--mark
+	//img
+		//@extend .m-64
+	p
+		line-height: 1.6
+		margin-bottom: 30px
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+	ul
+		margin-bottom: 30px
+		padding-left 26px
+		list-style none
+		li
+			line-height: 1.6
+			margin-bottom: 16px
+			position relative
+			//font-weight: 700
+			&:before
+				content ''
+				position absolute
+				size 12px
+				round()
+				border 2px solid $mark
+				left -26px
+				top 6px
+			&:last-child
+				margin-bottom: 0
+
+// calc icon size
+for $listIconItem in $listIcon
+	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
+		width $listIconItem[1] px
+		height $listIconItem[1] px
+// calc icon size === end
+
+.icon
+	size 24px
+
+.icon--md
+	size 32px
+
+.icon--lg
+	size 48px
+
+.icon--xl
+	size 80px
+
+.icon--left
+	margin-left: 10px
+
+.icon--right
+	margin-right: 10px
+
+.icon--mark
+	fill $mark
+
+.icon--gray
+	fill $gray
+
+.icon--orange
+	fill $orange
+
+.icon--white
+	fill white
+
+.db
+	display block
+
+// icons === end
+
+// block extend

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<!--create by ANATOLY KUZNETSOV-->
+<!--contact mail:kuznecovs45@gmail.com skype:an_kuznetcov-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--colors-tabs-->
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!--SEO-->
+    <title>Document</title>
+    <meta name="description" itemprop="description" content="" />
+    <!--build:css ./css/vendor.css-->
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick.css")-->
+    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick-theme.css")-->
+    <!--link(rel="stylesheet", href="bower/jquery-nice-select/css/nice-select.css")-->
+    <!--link(rel="stylesheet", href="bower/ion.rangeSlider/css/ion.rangeSlider.css")-->
+    <!--endbuild-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style-edit.css" />
+</head>
+<!--+checkbox('Выбрать пункт 1',true,disable)-->
+<!--+radio('Выбрать пункт 1',"list","true",'disable')-->
+
+<body>
+    <style type="text/css">
+        .elements-hr {
+        		margin: 40px 0;
+        		display: block;
+        		height: 1px;
+        		border-bottom: 1px solid #d1d1d1;
+        	}
+        	
+        	.all-page-color {
+        		display: flex;
+        		flex-wrap: wrap;
+        	}
+        	
+        	.all-page-color__el {
+        		margin: 20px;
+        	}
+        	
+        	.all-page-color__block {
+        		width: 100px;
+        		height: 100px;
+        		border-radius: 10px;
+        		margin-bottom: 10px;
+        	}
+        	
+        	.all-page-color__el-name {
+        		text-align: center;
+        		font-size: 14px;
+        		font-weight: 700;
+        	}
+        	
+        	.old-browser-text {
+        		text-align: center;
+        		color: #fff;
+        		font-size: 20px;
+        	}
+        	
+        	.element-list-svg {
+        		display: flex;
+        		justify-content: center;
+        		align-items: center;
+        		flex-wrap: wrap;
+        	}
+        	
+        	.element-list-svg__icon {
+        		width: 12%;
+        		margin: 20px 0;
+        		display: flex;
+        		justify-content: center;
+        		align-items: center;
+        		flex-flow: column;
+        	}
+        	
+        	.element-list-svg__icon .icon-el {
+        		margin-bottom: 10px;
+        		width: 35px;
+        		height: 35px;
+        	}
+    </style>
+    <div class="main-cont main-cont--all">
+        <h1>Заголовок h1</h1>
+        <h2>Заголовок h2</h2>
+        <h3>Заголовок h3</h3>
+        <h4>Заголовок h4</h4>
+        <h5>Заголовок h5</h5>
+        <div class="elements-hr"></div>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque consequuntur deleniti ducimus eius itaque iure laborum laudantium natus perspiciatis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad, alias aliquid amet autem deleniti dolor eligendi eos esse, fuga incidunt itaque iure minus officiis quasi quo sequi suscipit tempora tenetur totam. Alias aperiam commodi deserunt
+                facilis mollitia nobis provident.</p>
+            <ul>
+                <li>пункт 1</li>
+                <li>пункт 2</li>
+                <li>пункт 3</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit, omnis velit voluptate. Ab ad adipisci beatae consectetur consequuntur cum cumque delectus dolor doloremque ducimus earum error eveniet hic illum
+                incidunt iste labore laborum molestiae nemo non, pariatur, possimus qui quia quisquam rem sit, suscipit tempore unde.</p>
+        </div>
+        <div class="elements-hr"></div>
+        <a class="btn--md btn--mark" href="#">Стандартная</a>
+        <a class="btn--md btn--disable" href="#">Неактивная</a>
+        <a class="btn--md btn--light" href="#">Дополнительная</a>
+        <a class="btn--md btn--light" href="#">
+            <div class="btn--icon">
+                <span>C иконкой</span>
+                <svg class="nav-icon">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </div>
+        </a>
+        <a class="btn--md btn--mark" href="#">
+            <div class="btn--icon">
+                <span>C иконкой</span>
+                <svg class="nav-icon">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </div>
+        </a>
+        <div class="elements-hr"></div>
+        <a class="btn--sm btn--mark" href="#">Кнопка small</a>
+        <a class="btn--sm btn--disable" href="#">Неактивная small</a>
+        <a class="btn--sm btn--light" href="#">Второстепенная small</a>
+        <a class="btn--sm btn--light" href="#">
+            <div class="btn--icon">
+                <span>C иконкой small</span>
+                <svg class="nav-icon">
+                    <use xlink:href="#checked"></use>
+                </svg>
+            </div>
+        </a>
+        <div class="elements-hr"></div>
+        <a class="link--mark" href="#">Цветная ссылка</a>
+        <a class="link--main" href="#">Новая ссылка</a>
+        <a class="link--text" href="#">Ссылка в тексте</a>
+        <div class="elements-hr"></div>
+        <div class="forms">
+            <div class="input-row input-row--error">
+                <div class="input-row__title">Ваше имя</div>
+                <input class="input" type="text" placeholder="Ваше имя" />
+                <div class="error-msg">Введённые данные не должны содержать цифры</div>
+            </div>
+            <div class="input-cont input-cont--two">
+                <div class="input-row">
+                    <div class="input-row__title">Ваше имя</div>
+                    <input class="input" type="text" placeholder="Ваше имя" />
+                </div>
+                <div class="input-row">
+                    <div class="input-row__title">Ваше имя</div>
+                    <input class="input" type="text" placeholder="Ваше имя" />
+                </div>
+            </div>
+            <div class="input-cont input-cont--three">
+                <div class="input-row">
+                    <div class="input-row__title">Ваше имя</div>
+                    <input class="input" type="text" placeholder="Ваше имя" />
+                </div>
+                <div class="input-row">
+                    <div class="input-row__title">Ваше имя</div>
+                    <input class="input" type="text" placeholder="Ваше имя" />
+                </div>
+                <div class="input-row">
+                    <div class="input-row__title">Ваше имя</div>
+                    <input class="input" type="text" placeholder="Ваше имя" />
+                </div>
+            </div>
+            <div class="input-get">
+                <input class="input" type="text" placeholder="Ваше имя" />
+                <div class="input-get__btn">
+                    <input class="input input-get__btn-el" type="submit" value="" />
+                    <svg class="icon">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-row__title">Ваше имя</div>
+                <textarea class="input" name="text" cols="30" rows="10"></textarea>
+            </div>
+            <!--checkbox remember-->
+            <div class="login-remember">
+                <div class="check-el">
+                    <label class="style-label style-label--checkbox">
+                        <input class="style-input" type="checkbox" />
+                        <div class="style-input-element">
+                            <svg class="icon">
+                                <use xlink:href="#checked"></use>
+                            </svg>
+                        </div>
+                        <div class="style-input-text">Я ознакомился с
+                            <a href="#">политикой конфиденциальности</a>,
+                            <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                    </label>
+                </div>
+            </div>
+            <!--upload-->
+            <div class="upload-wrap">
+                <div class="upload-img"></div>
+                <label class="upload">
+                    <div class="upload__icon">
+                        <svg class="icon">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                    <div class="upload__text">Прикрепить фото</div>
+                    <input class="upload-btn" type="file" />
+                </label>
+            </div>
+            <input class="btn--md btn--mark" type="submit" value="Отправить" />
+        </div>
+        <div class="elements-hr"></div>
+        <div class="dropdown">
+            <input type="hidden" name="name" value="0" />
+            <div class="dropdown-current">
+                <div class="dropdown-current__val">Начальное значение</div>
+                <svg class="icon">
+                    <use xlink:href="#arrow-down-fat"></use>
+                </svg>
+            </div>
+            <div class="dropdown-menu">
+                <div class="dropdown-menu__el" data-value="#">Значение 1</div>
+                <div class="dropdown-menu__el" data-value="#">Значение 2</div>
+                <div class="dropdown-menu__el" data-value="#">Значение 3</div>
+            </div>
+        </div>
+        <div class="elements-hr"></div>
+        <div class="element-list-svg">
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-down-fat"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-down-fat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-down"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-down</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-left-fat"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-left-fat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-left"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-left</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-right-fat"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-right-fat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-right</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-up-fat"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-up-fat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#arrow-up"></use>
+                </svg>
+                <div class="element-list-svg__name">arrow-up</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#cancel"></use>
+                </svg>
+                <div class="element-list-svg__name">cancel</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#card"></use>
+                </svg>
+                <div class="element-list-svg__name">card</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#cart"></use>
+                </svg>
+                <div class="element-list-svg__name">cart</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#check-round"></use>
+                </svg>
+                <div class="element-list-svg__name">check-round</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#checked"></use>
+                </svg>
+                <div class="element-list-svg__name">checked</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#clip"></use>
+                </svg>
+                <div class="element-list-svg__name">clip</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#clock"></use>
+                </svg>
+                <div class="element-list-svg__name">clock</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#close-fat"></use>
+                </svg>
+                <div class="element-list-svg__name">close-fat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#close"></use>
+                </svg>
+                <div class="element-list-svg__name">close</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#delete"></use>
+                </svg>
+                <div class="element-list-svg__name">delete</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#download"></use>
+                </svg>
+                <div class="element-list-svg__name">download</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#edit"></use>
+                </svg>
+                <div class="element-list-svg__name">edit</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#exit"></use>
+                </svg>
+                <div class="element-list-svg__name">exit</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#heart"></use>
+                </svg>
+                <div class="element-list-svg__name">heart</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#house"></use>
+                </svg>
+                <div class="element-list-svg__name">house</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#info"></use>
+                </svg>
+                <div class="element-list-svg__name">info</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#interface"></use>
+                </svg>
+                <div class="element-list-svg__name">interface</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#like"></use>
+                </svg>
+                <div class="element-list-svg__name">like</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#location"></use>
+                </svg>
+                <div class="element-list-svg__name">location</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#login"></use>
+                </svg>
+                <div class="element-list-svg__name">login</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#mail"></use>
+                </svg>
+                <div class="element-list-svg__name">mail</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#menu"></use>
+                </svg>
+                <div class="element-list-svg__name">menu</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#minus"></use>
+                </svg>
+                <div class="element-list-svg__name">minus</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#phone-call"></use>
+                </svg>
+                <div class="element-list-svg__name">phone-call</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#plus"></use>
+                </svg>
+                <div class="element-list-svg__name">plus</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#profile"></use>
+                </svg>
+                <div class="element-list-svg__name">profile</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#repeat"></use>
+                </svg>
+                <div class="element-list-svg__name">repeat</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#search"></use>
+                </svg>
+                <div class="element-list-svg__name">search</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#share"></use>
+                </svg>
+                <div class="element-list-svg__name">share</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#shopping-cart"></use>
+                </svg>
+                <div class="element-list-svg__name">shopping-cart</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#smile-good"></use>
+                </svg>
+                <div class="element-list-svg__name">smile-good</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-facebook"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-facebook</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-in"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-in</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-instagram"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-instagram</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-ok"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-ok</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-telegram"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-telegram</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-twitter"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-twitter</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-vk"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-vk</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-whatsapp"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-whatsapp</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#soc-youtube"></use>
+                </svg>
+                <div class="element-list-svg__name">soc-youtube</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#sprite"></use>
+                </svg>
+                <div class="element-list-svg__name">sprite</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#star"></use>
+                </svg>
+                <div class="element-list-svg__name">star</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#tick--color"></use>
+                </svg>
+                <div class="element-list-svg__name">tick--color</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#unlike"></use>
+                </svg>
+                <div class="element-list-svg__name">unlike</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#upload"></use>
+                </svg>
+                <div class="element-list-svg__name">upload</div>
+            </div>
+            <div class="element-list-svg__icon">
+                <svg class="icon-el">
+                    <use xlink:href="#user"></use>
+                </svg>
+                <div class="element-list-svg__name">user</div>
+            </div>
+        </div>
+    </div>
+    <!--build:js ./js/combined.js-->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <!--script(src='bower/slick-carousel/slick/slick.js')-->
+    <!--script(src='bower/jquery.nicescroll/jquery.nicescroll.min.js')-->
+    <!--script(src='bower/jquery-nice-select/js/jquery.nice-select.min.js')-->
+    <!--script(src="bower/ion.rangeSlider/js/ion.rangeSlider.js")-->
+    <!-- endbuild-->
+    <script src="./js/add-on.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-edit.js"></script>
+</body>
+
+</html>

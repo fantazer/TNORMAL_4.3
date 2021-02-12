@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<!--create by ANATOLY KUZNETSOV-->
+<!--contact mail:kuznecovs45@gmail.com skype:an_kuznetcov-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--colors-tabs-->
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!--SEO-->
+    <title>Document</title>
+    <meta name="description" itemprop="description" content="" />
+    <!--build:css ./css/vendor.css-->
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick.css")-->
+    <!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick-theme.css")-->
+    <!--link(rel="stylesheet", href="bower/jquery-nice-select/css/nice-select.css")-->
+    <!--link(rel="stylesheet", href="bower/ion.rangeSlider/css/ion.rangeSlider.css")-->
+    <!--endbuild-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style-edit.css" />
+</head>
+<!--+checkbox('Выбрать пункт 1',true,disable)-->
+<!--+radio('Выбрать пункт 1',"list","true",'disable')-->
+
+<body>
+    <style type="text/css">
+        .all-page__el {
+        		padding: 5px;
+        		box-shadow: 0px 3px 8px #e3e3e3;
+        		border-radius: 10px;
+        	}
+        	
+        	.all-page__el:hover {
+        		box-shadow: 0px 3px 3px #e3e3e3;
+        		transition: box-shadow 0.8s;
+        	}
+        	
+        	.all-page__el:hover:hover {
+        		box-shadow: 0 18px 32px #e3e3e3;
+        	}
+        	
+        	.all-page {
+        		display: grid;
+        		grid-gap: 20px;
+        		grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        		margin-bottom: 30px;
+        	}
+        	
+        	.all-page__title {
+        		text-align: center;
+        		padding: 10px;
+        		font-size: 16px;
+        		color: #000;
+        	}
+    </style>
+    <div class="main-cont">
+        <h1>Список страниц</h1>
+        <div class="all-page">
+            <a class="all-page__el" href="elements.html">
+                <img src="img/screen/app/elements.png" alt="" />
+                <div class="all-page__info">
+                    <div class="all-page__title">Элементы</div>
+                </div>
+            </a>
+            <a class="all-page__el" href="main.html">
+                <img src="img/screen/app/main.png" alt="" />
+                <div class="all-page__info">
+                    <div class="all-page__title">Главная</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--build:js ./js/combined.js-->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <!--script(src='bower/slick-carousel/slick/slick.js')-->
+    <!--script(src='bower/jquery.nicescroll/jquery.nicescroll.min.js')-->
+    <!--script(src='bower/jquery-nice-select/js/jquery.nice-select.min.js')-->
+    <!--script(src="bower/ion.rangeSlider/js/ion.rangeSlider.js")-->
+    <!-- endbuild-->
+    <script src="./js/add-on.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-edit.js"></script>
+</body>
+
+</html>

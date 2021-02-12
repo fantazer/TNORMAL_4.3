@@ -1,0 +1,237 @@
+// === Inputs ===
+.input
+	padding 18px 15px
+	border 1px solid $border-color
+	resize: none
+	outline: 0 !important
+	border-radius 4px
+	font-family $v-font
+	display block!important
+	placeholder($typePrimary)
+	tr(all)
+	line-height: 1.6
+	&:focus
+		border 1px solid black
+		background: white
+	&.disable
+		@extend .disabled
+	&:hover
+		border 1px solid $borderHover
+
+// calc border size
+for $listBrItem in $listBr
+	.br--{$listBrItem}
+		border-radius $listBrItem px
+// calc border size === end
+
+// checkbox + radio style
+.style-label
+	display flex
+	position relative
+	align-items center
+	&.disable
+		@extend .disabled
+
+.check-el
+	input
+		position absolute
+		top 0
+		left -9999px
+
+.style-input-text
+	color black
+	width: calc(100% - 48px)
+	line-height: 1.6
+	a
+		color $mark
+
+// checkbox
+.style-label--checkbox
+	.style-input-element
+		br(4px)
+		cp()
+		tr(all)
+		size 32px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 1px solid $border-color
+		&:hover
+			border 1px solid $mark
+	.icon
+		display none
+	.style-input
+		&:checked ~ .style-input-element
+			flex(mid)
+			color white
+			background: $mark
+			border 1px solid $mark
+			.icon
+				display block
+				fill white
+				size 14px
+// checkbox === end
+
+// radio
+.style-label--radio
+	.style-input-element
+		size 32px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 1px solid $border-color
+		round()
+		cp()
+		tr()
+		&:hover
+			border 2px solid $mark
+	.style-input
+		&:checked ~ .style-input-element
+			flex(mid)
+			color white
+			border 1px solid $mark
+			background: $mark
+			.icon-radio
+				round()
+				size 16px
+				background white
+// radio === end
+
+// checkbox + radio style === end
+
+// Form
+.input-row
+	.input
+		width: 100%
+	&.error
+		.input
+			border-color $stateError
+			color $stateError
+		.error-msg
+			display block
+		.style-input-element
+			border 1px solid $stateError
+
+.error-msg
+	color $stateError
+	display none
+	margin-top: 6px
+	margin-bottom: -6px
+// Form === end
+
+// incr
+.incr
+	f()
+	position relative
+.incr__nav
+	flex(mid)
+	tr(all)
+	size 40px
+	border 1px solid #dddddd
+	background white
+	round()
+	.icon
+		size 14px
+		fill $gray
+		tr()
+	&:hover
+		cp()
+		border 1px solid $mark
+		.icon
+			fill $mark
+	&:active
+		background-color darken($mark,10)
+.incr__val
+	flex(mid)
+	background white
+	position relative
+	tr(all)
+	padding: 0 15px
+	span
+		outline: none
+		user-select: none
+
+// Переключение с кнопки на инкремент
+.incr-btn
+	.incr-btn-wrap
+		display: none
+.incr-btn--active
+	.incr-btn__el
+		display: none
+	.incr-btn-wrap
+		display: block
+// incr === end
+
+// drop
+.dropdown
+	width: 100%
+	display inline-block
+	tr()
+	position relative
+	outline none!important
+.dropdown-current
+	br(4px)
+	tr()
+	border 1px solid $border-color
+	cursor pointer
+	display block
+	padding 18px 15px
+	position relative
+	&:hover
+		border 1px solid $borderHover
+		.icon
+			fill black
+	.icon
+		position absolute
+		top calc(50% - 8px)
+		right 20px
+		size 16px
+		tr()
+		fill black
+.dropdown-current__val
+	color black
+	white-space nowrap
+	text-overflow ellipsis
+	overflow hidden
+.dropdown-title
+	position absolute
+	top 8px
+	left 20px
+	@extend .type--sm
+	color $typeSecondary
+.dropdown.active
+	.icon
+		transform rotate(180deg)
+	.dropdown-current
+		background: white
+.dropdown-menu
+	position absolute
+	background-color #fff
+	width 100%
+	br(4px)
+	box-shadow 0 12px 32px rgba(41, 42, 53, 0.16)
+	overflow hidden
+	display none
+	max-height 200px
+	overflow-y auto
+	z-index 10
+	&::-webkit-scrollbar
+		-webkit-appearance: none
+		width: 4px
+		background: #f3f3f3
+	&::-webkit-scrollbar-thumb
+		border-radius: 2px
+		background-color: rgba(0, 0, 0, .1)
+.dropdown-menu__el
+	padding 18px 20px
+	cp()
+	tr()
+	//background: #f9f9f9
+	&:last-child
+		border 0
+	&:hover
+		background: $graySnow
+		color black
+// drop === end

@@ -1,0 +1,37 @@
+mixin modal()
+	.modal-layer
+		.modal-filter
+		.modal-wrap
+			.modal(data-modal="order")
+				.modal-content
+					.modal-close
+						+icon("close","icon")
+					.modal-title Оставьте заявку
+					.modal-text Обращаетесь к нам впервые? <br> Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!
+					form.validate-form( action="javascript:void(null);")
+						.input-cont
+							.input-row
+								.input-row__title
+								input(type="text" placeholder="Ваше имя" class="input")
+						.input-cont
+							.input-row
+								.input-row__title
+								input(type="text" placeholder="Телефон" class="input")
+						.login-remember
+							.check-el
+								label.style-label.style-label--checkbox
+									input(type="checkbox").style-input
+									.style-input-element
+										+icon("checked","icon")
+									.style-input-text Я ознакомился с #[a(href="#") политикой конфиденциальности], #[a(href="#") публичной офертой] и даю согласие на обработку моих персональных данных
+						input(type="submit" value="Отправить заявку").modal-send
+			//success message
+			.modal(data-modal="true")
+				.modal-content.modal-content--true
+					.modal-close
+						+icon("close-fat","icon")
+					+icon("check-round","icon icon-msg")
+					.modal-text-true Сообщение отправленно
+
+	a(href="#" data-modal="order").modal-get Открыть модальное окно
+
