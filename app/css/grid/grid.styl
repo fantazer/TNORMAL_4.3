@@ -2,7 +2,6 @@
 
 //START GRID
 $gridList = (1 2 3 4 5 6)
-$windowSize = (xl lg md sm)
 
 for $gridListItem in $gridList
 	.g-{$gridListItem}
@@ -10,18 +9,8 @@ for $gridListItem in $gridList
 
 for $windowSizeItem in $windowSize
 	for $gridListItem in $gridList
-		.{$windowSizeItem}__g-{$gridListItem}
-			if($windowSizeItem == xl)
-				+below(1280px)
-					grid-template-columns: repeat($gridListItem, 1fr)
-			if($windowSizeItem == lg)
-				+below(1024px)
-					grid-template-columns: repeat($gridListItem, 1fr)
-			if($windowSizeItem == md)
-				+below(768px)
-					grid-template-columns: repeat($gridListItem, 1fr)
-			if($windowSizeItem == sm)
-				+below(640px)
+		.{$windowSizeItem[0]}__g-{$gridListItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
 					grid-template-columns: repeat($gridListItem, 1fr)
 
 .row
@@ -36,26 +25,19 @@ for num in (1..12)
 for $windowSizeItem in $windowSize
 	for num in (1..12)
 		for numEl in (1..12)
-			.{$windowSizeItem}__g-{num}-{numEl}
+			.{$windowSizeItem[0]}__g-{num}-{numEl}
 				if($windowSizeItem == xl)
-					+below(1280px)
-							grid-column num / numEl+1
-				if($windowSizeItem == lg)
-					+below(1024px)
-							grid-column num / numEl+1
-				if($windowSizeItem == md)
-					+below(768px)
-							grid-column num / numEl+1
-				if($windowSizeItem == sm)
-					+below(640px)
-							grid-column num / numEl+1
+					@media only screen and (max-width: $windowSizeItem[1]px)
+						grid-column num / numEl+1
 
 // END GRID
 
+
 // calc flex-wrap media
 for $windowSizeItem in $windowSize
-	.{$windowSizeItem}__fw
-		flex-wrap wrap-test
+	.{$windowSizeItem[0]}__fw
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			flex-wrap wrap
 // calc flex-wrap media === end
 
 // calc gap
@@ -71,6 +53,7 @@ for $gridGapItem in $gridGap
 		calcGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
 // calc gap === end
 
+// calc width
 
 for itemWidth in (1..20)
 	.w{itemWidth*5}
@@ -78,16 +61,7 @@ for itemWidth in (1..20)
 
 for $windowSizeItem in $windowSize
 	for itemWidth in (1..20)
-		.{$windowSizeItem}__w{itemWidth*5}
-			if($windowSizeItem == xl)
-				+below(1280px)
+		.{$windowSizeItem[0]}__w{itemWidth*5}
+			@media only screen and (max-width: $windowSizeItem[1]px)
 					width (itemWidth*5) %
-			if($windowSizeItem == lg)
-				+below(1024px)
-					width (itemWidth*5) %
-			if($windowSizeItem == md)
-				+below(768px)
-					width (itemWidth*5) %
-			if($windowSizeItem == sm)
-				+below(640px)
-					width (itemWidth*5) %
+// calc width === end

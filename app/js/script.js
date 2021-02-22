@@ -11,7 +11,7 @@ $(document).ready(function () {
 		if (!$('.modal-layer').hasClass('active')) {
 			$('.modal-layer').addClass('active');
 			modalState.scrollPos = $(window).scrollTop();
-			$('body').css({
+			body.css({
 				overflowY: 'hidden',
 				top: -modalState.scrollPos,
 				width: '100%',
@@ -22,7 +22,7 @@ $(document).ready(function () {
 	};
 
 	var closeModal = function () {
-		$('body').css({
+		body.css({
 			overflow: '',
 			position: '',
 			top: modalState.scrollPos,
@@ -75,11 +75,11 @@ $(document).ready(function () {
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
 		if ( scroll >= shrinkHeader ) {
-				$('body').css('paddingTop',heightHeader);
+				body.css('paddingTop',heightHeader);
 				head.addClass('shrink');
 			}
 			else {
-					$('body').css('paddingTop',0);
+					body.css('paddingTop',0);
 					head.removeClass('shrink');
 			}
 	});
@@ -103,7 +103,7 @@ $(document).ready(function () {
 	var actionTick;
 	(
 		actionTick = function(){
-				$('body').on('click','.js-tick',function(){
+				body.on('click','.js-tick',function(){
 					var parent = $(this).closest('.js-tick-cont');
 					parent.find('.js-tick').removeClass('active');
 					$(this).addClass('active')
@@ -178,7 +178,7 @@ $(document).ready(function () {
 	var actionTab;
 	(
 		actionTab = function(){
-			$('body').on('click','.js-tab',function(){
+			body.on('click','.js-tab',function(){
 				var current = $(this).index();
 				var parent = $(this).closest('.js-tab-wrap')
 				parent.find('.js-tab-cont').removeClass('active')
@@ -224,18 +224,18 @@ $(document).ready(function () {
 
 	// incr
 	var incrEl = {}
-	$('body').on('click', '.js-inc-nav', function (e) {
+	body.on('click', '.js-inc-nav', function (e) {
 		incrEl.parent = $(this).closest(".js-incr-wrap");
 		incrEl.value = parseInt(incrEl.parent.find('.js-incr-val').html());
 		incrEl.state = incrEl.parent.find('.js-incr-val')
 		incrEl.min = incrEl.parent.data('min')*1 || 0
 	});
-	$('body').on('click', '.js-inc-nav--minus', function (e) {
+	body.on('click', '.js-inc-nav--minus', function (e) {
 		incrEl.value = incrEl.value <= incrEl.min ? incrEl.min : --incrEl.value
 		incrEl.state.html(incrEl.value);
 		console.log(incrEl.value);
 	});
-	$('body').on('click', '.js-inc-nav--plus', function (e) {
+	body.on('click', '.js-inc-nav--plus', function (e) {
 		++incrEl.value;
 		incrEl.value = incrEl.value > 100 ? 100 : incrEl.value;
 		incrEl.state.html(incrEl.value);
@@ -266,6 +266,32 @@ $(document).ready(function () {
 		localStorage.setItem('bubble', '0');
 	});
 	//bubble===end
+
+	// slide menu
+	var hideSlideMenu = function(el){
+		$(".head-toggle").removeClass('active');
+		$(".slide-block").removeClass("active");
+	}
+	$('.js-slide-block-toggle').click(function (event) {
+		$(".js-slide-block-toggle").not(this).removeClass('active');
+		var current = $(this).data("menu");
+		$(".slide-block").each(function () {
+			if ($(this).data("menu") === current) {
+				$(this).toggleClass("active")
+			} else {
+				$(this).removeClass("active")
+			}
+		})
+		$(this).toggleClass('active');
+	});
+
+	$(document).mouseup(function (e) {
+		var parent = $(".slide-block").add('.js-slide-block-toggle');
+		if (!parent.is(e.target) && parent.has(e.target).length === 0) {
+			hideSlideMenu();
+		}
+	});
+	// slide menu === end
 
 	//window.condition = {};
 	//window.condition.info = info;

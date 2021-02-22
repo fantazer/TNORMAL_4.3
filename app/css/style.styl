@@ -215,3 +215,48 @@ body
 	display inline-block
 
 // edit items === end
+
+// slider menu
+.head-toggle
+	cp()
+	+above(1025px)
+		display: none
+	.icon-close
+		display: none
+
+.head-toggle
+	&.active
+		.icon-close
+			display: block
+		.icon-open
+			display: none
+
+.slide-block
+	+below(640px)
+		top 60px
+		height: calc(100% - 60px) // Высота шапки
+	+below(480px)
+		width: 100%
+	position: fixed
+	top 60px // Высота шапки
+	width: 360px
+	tr(all)
+	height: calc(100% - 60px) // Высота шапки
+	z-index 100
+	background: white
+	&.active
+		transform translateX(0%)
+.slide-block--left
+	left 0
+	transform translateX(-100%)
+
+.slide-block--right
+	right 0
+	transform translateX(100%)
+
+.slide-nav__el
+	display  block
+
+.slide-block-wrap
+	padding: 24px
+// slider menu === end
