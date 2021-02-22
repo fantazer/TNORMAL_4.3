@@ -27,6 +27,7 @@
 </head>
 <!--+checkbox('Выбрать пункт 1',true,disable)-->
 <!--+radio('Выбрать пункт 1',"list","true",'disable')-->
+<!-- +incr(1,'.incr--lg',1)-->
 
 <body>
     <style type="text/css">
@@ -67,63 +68,45 @@
         <div class="modal-wrap">
             <div class="modal" data-modal="order">
                 <div class="modal-content">
-                    <div class="modal-close">
+                    <div class="modal-close js-modal-close">
                         <svg class="icon">
                             <use xlink:href="#close"></use>
                         </svg>
                     </div>
-                    <div class="modal-title">Оставьте заявку</div>
-                    <div class="modal-text">Обращаетесь к нам впервые?
+                    <div class="type--lg type--w700 mb-16">Оставьте заявку</div>
+                    <div class="type--main mb-24">Обращаетесь к нам впервые?
                         <br>Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!</div>
                     <form class="validate-form" action="javascript:void(null);">
-                        <div class="input-cont">
+                        <div class="g g-1 gap-16">
                             <div class="input-row">
-                                <div class="input-row__title"></div>
                                 <input class="input" type="text" placeholder="Ваше имя" />
                             </div>
-                        </div>
-                        <div class="input-cont">
                             <div class="input-row">
-                                <div class="input-row__title"></div>
                                 <input class="input" type="text" placeholder="Телефон" />
                             </div>
-                        </div>
-                        <div class="login-remember">
-                            <div class="check-el">
-                                <label class="style-label style-label--checkbox">
-                                    <input class="style-input" type="checkbox" />
-                                    <div class="style-input-element">
-                                        <svg class="icon">
-                                            <use xlink:href="#checked"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="style-input-text">Я ознакомился с
-                                        <a href="#">политикой конфиденциальности</a>,
-                                        <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
-                                </label>
+                            <div class="mb-24">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="style-input" type="checkbox" />
+                                        <div class="style-input-element">
+                                            <svg class="icon">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="style-input-text type--sm">Я ознакомился с
+                                            <a href="#">политикой конфиденциальности</a>,
+                                            <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <input class="modal-send" type="submit" value="Отправить заявку" />
+                        <input class="btn btn--md btn--mark btn--full" type="submit" value="Отправить заявку" />
                     </form>
-                </div>
-            </div>
-            <!--success message-->
-            <div class="modal" data-modal="true">
-                <div class="modal-content modal-content--true">
-                    <div class="modal-close">
-                        <svg class="icon">
-                            <use xlink:href="#close-fat"></use>
-                        </svg>
-                    </div>
-                    <svg class="icon icon-msg">
-                        <use xlink:href="#check-round"></use>
-                    </svg>
-                    <div class="modal-text-true">Сообщение отправленно</div>
                 </div>
             </div>
         </div>
     </div>
-    <a class="modal-get" href="#" data-modal="order">Открыть модальное окно</a>
+    <!--.js-modal Открыть модальное окно-->
     <div class="cookie">
         <!-- to show add class .cookie + .cookie--active-->
         <div class="main-cont">

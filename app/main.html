@@ -27,6 +27,7 @@
 </head>
 <!--+checkbox('Выбрать пункт 1',true,disable)-->
 <!--+radio('Выбрать пункт 1',"list","true",'disable')-->
+<!-- +incr(1,'.incr--lg',1)-->
 
 <body>
     <div class="page">
@@ -35,41 +36,57 @@
         <div class="content">
             <div class="main-cont">
                 <h1>Главная страница</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dignissimos fugit ipsam non pariatur possimus quasi, rem similique ullam voluptate?</p>
-                <div class="g g-4 gap-20">
-                    <div class="box p-24 br--12">
-                        <svg class="icon icon--lg icon--mark mb-24">
-                            <use xlink:href="#search"></use>
-                        </svg>
-                        <div class="type--bold type--24 mb-10">Новости</div>
-                        <div class="type--main type--typePrimary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias exercitationem explicabo iure maiores nisi perspiciatis quis repudiandae veritatis. Amet aperiam at aut ea est labore odit quas quos tempora voluptate.</div>
-                    </div>
-                    <div class="box p-24 br--12">
-                        <svg class="icon icon--lg icon--mark mb-24">
-                            <use xlink:href="#search"></use>
-                        </svg>
-                        <div class="type--bold type--24 mb-10">Новости</div>
-                        <div class="type--main type--typePrimary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias exercitationem explicabo iure maiores nisi perspiciatis quis repudiandae veritatis. Amet aperiam at aut ea est labore odit quas quos tempora voluptate.</div>
-                    </div>
-                    <div class="box p-24 br--12">
-                        <svg class="icon icon--lg icon--mark mb-24">
-                            <use xlink:href="#search"></use>
-                        </svg>
-                        <div class="type--bold type--24 mb-10">Новости</div>
-                        <div class="type--main type--typePrimary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias exercitationem explicabo iure maiores nisi perspiciatis quis repudiandae veritatis. Amet aperiam at aut ea est labore odit quas quos tempora voluptate.</div>
-                    </div>
-                    <div class="box p-24 br--12">
-                        <svg class="icon icon--lg icon--mark mb-24">
-                            <use xlink:href="#search"></use>
-                        </svg>
-                        <div class="type--bold type--24 mb-10">Новости</div>
-                        <div class="type--main type--typePrimary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias exercitationem explicabo iure maiores nisi perspiciatis quis repudiandae veritatis. Amet aperiam at aut ea est labore odit quas quos tempora voluptate.</div>
-                    </div>
+                <div class="f f-aic">
+                    <div class="btn btn--md btn--mark js-modal" data-modal="order">купить</div>
                 </div>
             </div>
         </div>
         <!--block footer-->
         <!--block footer end-->
+        <div class="modal-layer">
+            <div class="modal-filter"></div>
+            <div class="modal-wrap">
+                <div class="modal" data-modal="order">
+                    <div class="modal-content">
+                        <div class="modal-close js-modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </div>
+                        <div class="type--lg type--w700 mb-16">Оставьте заявку</div>
+                        <div class="type--main mb-24">Обращаетесь к нам впервые?
+                            <br>Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!</div>
+                        <form class="validate-form" action="javascript:void(null);">
+                            <div class="g g-1 gap-16">
+                                <div class="input-row">
+                                    <input class="input" type="text" placeholder="Ваше имя" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input" type="text" placeholder="Телефон" />
+                                </div>
+                                <div class="mb-24">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--checkbox">
+                                            <input class="style-input" type="checkbox" />
+                                            <div class="style-input-element">
+                                                <svg class="icon">
+                                                    <use xlink:href="#checked"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="style-input-text type--sm">Я ознакомился с
+                                                <a href="#">политикой конфиденциальности</a>,
+                                                <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="btn btn--md btn--mark btn--full" type="submit" value="Отправить заявку" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--.js-modal Открыть модальное окно-->
     </div>
     <!--build:js ./js/combined.js-->
     <script src="bower/jquery/dist/jquery.js"></script>

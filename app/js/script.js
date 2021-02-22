@@ -8,8 +8,8 @@ $(document).ready(function () {
 	};
 	var scrollWidth= window.innerWidth - $(document).width();
 	var openModal = function () {
-		if (!$('.modal-layer').hasClass('modal-layer-show')) {
-			$('.modal-layer').addClass('modal-layer-show');
+		if (!$('.modal-layer').hasClass('active')) {
+			$('.modal-layer').addClass('active');
 			modalState.scrollPos = $(window).scrollTop();
 			$('body').css({
 				overflowY: 'hidden',
@@ -17,13 +17,11 @@ $(document).ready(function () {
 				width: '100%',
 				paddingRight:scrollWidth
 			});
-
 		}
 		modalState.isModalShow = true;
 	};
 
 	var closeModal = function () {
-		$('.modal-layer').removeClass('modal-layer-show');
 		$('body').css({
 			overflow: '',
 			position: '',
@@ -34,32 +32,30 @@ $(document).ready(function () {
 		$('.modal').addClass('modal-hide-animation');
 		setTimeout(function(){
 			$('.modal').removeClass('modal-hide-animation');
-			$('.modal').removeClass('modal__show');
-		},600);
+			$('.modal').removeClass('active');
+			$('.modal-layer').removeClass('active');
+		},400);
 		modalState.isModalShow = false;
 	};
 
 	var initModal = function (el) {
 		openModal();
-
 		$('.modal').each(function () {
 			if ($(this).data('modal') === el) {
-				$(this).addClass('modal__show')
+				$(this).addClass('active')
 			} else {
-				$(this).removeClass('modal__show')
+				$(this).removeClass('active')
 			}
 		});
 		var modalHeightCont = $(window).height();
 		$('.modal-filter').height(modalHeightCont);
-
 	};
 
-	$('.modal-get').click(function () {
-		var currentModal = $(this).data("modal");
-		initModal(currentModal);
+	$('.js-modal').click(function () {
+		initModal($(this).data("modal"));
 	});
 
-	$('.modal-close, .modal-hide').click(function () {
+	$('.js-modal-close').click(function () {
 		closeModal();
 	});
 
@@ -67,6 +63,9 @@ $(document).ready(function () {
 		e.target.className === 'modal-wrap' ? closeModal() : false
 	});
 
+	$(document).on('keyup',function(e){
+		e.key === 'Escape' ? closeModal() : ''
+	})
 	//modals===end
 
 	// fix top-menu
@@ -224,37 +223,23 @@ $(document).ready(function () {
 	// dropdown === end
 
 	// incr
-	var incrEl= {}
-	$('.incr__nav').click(function(){
-		incrEl.parent = $(this).closest(".incr");
-		incrEl.value = parseInt($(this).closest(".incr").find('.incr__val span').html());
-		incrEl.state = $(this).closest(".incr").find('.incr__val span')
+	var incrEl = {}
+	$('body').on('click', '.js-inc-nav', function (e) {
+		incrEl.parent = $(this).closest(".js-incr-wrap");
+		incrEl.value = parseInt(incrEl.parent.find('.js-incr-val').html());
+		incrEl.state = incrEl.parent.find('.js-incr-val')
+		incrEl.min = incrEl.parent.data('min')*1 || 0
 	});
-
-	$('.incr__minus').click(function () {
-		--incrEl.value;
-		if(incrEl.parent.hasClass("incr--one")){
-				incrEl.value = incrEl.value < 1 ? 1 : incrEl.value
-		}
-		incrEl.value = incrEl.value < 1 ? 0 : incrEl.value
+	$('body').on('click', '.js-inc-nav--minus', function (e) {
+		incrEl.value = incrEl.value <= incrEl.min ? incrEl.min : --incrEl.value
 		incrEl.state.html(incrEl.value);
+		console.log(incrEl.value);
 	});
-
-	$('.incr__plus').click(function () {
+	$('body').on('click', '.js-inc-nav--plus', function (e) {
 		++incrEl.value;
 		incrEl.value = incrEl.value > 100 ? 100 : incrEl.value;
 		incrEl.state.html(incrEl.value);
 	});
-
-	// Переключение с кнопки на инкремент
-	// increment btn
-	$('.incr-btn__el').click(function(){
-		$(this).closest(".incr-btn").addClass('incr-btn--active');
-	});
-	$('.incr-btn .incr__minus').click(function () {
-		incrEl.value === 1 ? $(this).closest(".incr-btn").removeClass("incr-btn--active") : ''
-	})
-	// increment btn === end
 	// incr === end
 
 	//bubble
@@ -284,7 +269,5 @@ $(document).ready(function () {
 
 	//window.condition = {};
 	//window.condition.info = info;
-
-
 	//upload-btn === end
 });

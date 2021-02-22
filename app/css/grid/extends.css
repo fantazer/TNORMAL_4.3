@@ -1246,3 +1246,9 @@
     padding-bottom: 36px;
   }
 }
+.m-la {
+  margin-left: auto;
+}
+.m-ra {
+  margin-right: auto;
+}

@@ -9,7 +9,7 @@ mixin checkbox(text,checked,className)
       input(type="checkbox" checked=checked  ? checked : false).style-input
       .style-input-element
         +icon("checked","icon")
-      .style-input-text !{text}
+      .style-input-text.type--sm !{text}
 
 
 //+radio('Выбрать пункт 1',"list","true",'disable')
@@ -21,12 +21,12 @@ mixin radio(text,group,checked,className)
         .icon-radio
       .style-input-text=text
 
-mixin incr(state,className='')
-  .incr(class= state ? className  +' incr--one' : className )
-    .incr__minus.incr__nav
+// +incr(1,'.incr--lg',1)
+mixin incr(state,className, min)
+  .incr.js-incr-wrap(class= className data-min=min)
+    .incr-nav.js-inc-nav.js-inc-nav--minus
       +icon("minus","icon")
-    .incr__val
-      span=state ? 1 : 0
-      .incr__val-coner
-    .incr__plus.incr__nav
+    .incr-val
+      span.js-incr-val=state ? state : 0
+    .incr-nav.js-inc-nav.js-inc-nav--plus
       +icon("plus","icon")

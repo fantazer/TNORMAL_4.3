@@ -8,13 +8,15 @@ for $listTypeItem in $listType
 		font-size $listTypeItem[1] px
 // calc font size === end
 
+// calc font weight
+for $listFwItem in $listFw
+	.type--w{$listFwItem}
+		font-weight $listFwItem
+// calc font weight === end
 
 font('Nunito-Regular','Nunito', 400)
 font('Nunito-Bold','Nunito', 700)
-$font =  'Nunito', sans-serif
-
-.type--bold
-	font-weight bold
+$font = 'Nunito', sans-serif
 
 .type--mid
 	text-align center
@@ -24,6 +26,12 @@ $font =  'Nunito', sans-serif
 
 .type--right
 	text-align right
+
+.type--ws
+	white-space nowrap
+
+.type--line
+	text-decoration: line-through
 
 h5
 	@extend .type--sm
@@ -45,6 +53,7 @@ a
 		color darken($linkColor,20)
 	&:visiter
 		color darken($linkColor,30)
+
 .link--mark
 	color $mark
 	&:hover
@@ -67,12 +76,11 @@ a
 		text-decoration none
 // link === end
 
-
 p
 	@extend .type--main
 
 .text
-	color black
+	color $typeMain
 	h1,h2,h3,h4,h5
 		margin 3.5rem 0 2rem
 	h1:first-of-type,
@@ -121,39 +129,4 @@ for $listIconItem in $listIcon
 		height $listIconItem[1] px
 // calc icon size === end
 
-.icon
-	size 24px
 
-.icon--md
-	size 32px
-
-.icon--lg
-	size 48px
-
-.icon--xl
-	size 80px
-
-.icon--left
-	margin-left: 10px
-
-.icon--right
-	margin-right: 10px
-
-.icon--mark
-	fill $mark
-
-.icon--gray
-	fill $gray
-
-.icon--orange
-	fill $orange
-
-.icon--white
-	fill white
-
-.db
-	display block
-
-// icons === end
-
-// block extend

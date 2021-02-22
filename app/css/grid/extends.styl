@@ -1,6 +1,5 @@
 @import '../variable/config/_config.styl'
 
-
 calcExtendBoth(nameExtend,size1,size2,size3)
 	{nameExtend} (size1 px) 0
 	+below(1024px)
@@ -36,3 +35,10 @@ for listSizeItem in $listSize
 				calcExtend('padding-top',listItem[0],listItem[1],listItem[2])
 			if listSizeItem == pb
 				calcExtend('padding-bottom',listItem[0],listItem[1],listItem[2])
+
+//simple
+.m-la
+	margin-left auto
+
+.m-ra
+	margin-right auto

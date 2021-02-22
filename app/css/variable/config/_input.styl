@@ -28,7 +28,6 @@ for $listBrItem in $listBr
 .style-label
 	display flex
 	position relative
-	align-items center
 	&.disable
 		@extend .disabled
 
@@ -125,7 +124,7 @@ for $listBrItem in $listBr
 .incr
 	f()
 	position relative
-.incr__nav
+.incr-nav
 	flex(mid)
 	tr(all)
 	size 40px
@@ -143,7 +142,7 @@ for $listBrItem in $listBr
 			fill $mark
 	&:active
 		background-color darken($mark,10)
-.incr__val
+.incr-val
 	flex(mid)
 	background white
 	position relative
@@ -153,16 +152,7 @@ for $listBrItem in $listBr
 		outline: none
 		user-select: none
 
-// Переключение с кнопки на инкремент
-.incr-btn
-	.incr-btn-wrap
-		display: none
-.incr-btn--active
-	.incr-btn__el
-		display: none
-	.incr-btn-wrap
-		display: block
-// incr === end
+
 
 // drop
 .dropdown

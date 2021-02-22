@@ -6,13 +6,8 @@ include block_html/_include.pug
 	.content
 		.main-cont
 			h1 Главная страница
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dignissimos fugit ipsam non pariatur possimus quasi, rem similique ullam voluptate?
-
-			.g.g-4.gap-20
-				- for (var i=0;i<4;i++)
-					.box.p-24.br--12
-						+icon("search","icon icon--lg icon--mark mb-24")
-						.type--bold.type--24.mb-10 Новости
-						.type--main.type--typePrimary Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias exercitationem explicabo iure maiores nisi perspiciatis quis repudiandae veritatis. Amet aperiam at aut ea est labore odit quas quos tempora voluptate.
+			.f.f-aic
+				.btn.btn--md.btn--mark.js-modal(data-modal="order") купить
 	+footer()
+	+modal()
 include ./block_html/_script.pug
