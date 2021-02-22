@@ -1,7 +1,8 @@
 @import '../variable/config/_config.styl'
 
+
 //START GRID
-$gridList = (1 2 3 4 5 6)
+$gridList = (1..12)
 
 for $gridListItem in $gridList
 	.g-{$gridListItem}
@@ -26,12 +27,10 @@ for $windowSizeItem in $windowSize
 	for num in (1..12)
 		for numEl in (1..12)
 			.{$windowSizeItem[0]}__g-{num}-{numEl}
-				if($windowSizeItem == xl)
-					@media only screen and (max-width: $windowSizeItem[1]px)
-						grid-column num / numEl+1
+				@media only screen and (max-width: $windowSizeItem[1]px)
+					grid-column num / numEl+1
 
 // END GRID
-
 
 // calc flex-wrap media
 for $windowSizeItem in $windowSize
