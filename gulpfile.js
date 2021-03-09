@@ -340,6 +340,8 @@ gulp.task('see', function () {
 })
 
 //default
+gulp.task('copy',['copy:font','copy:js','copy:css']);
+gulp.task('min',['min:css','min:js']);
 gulp.task('img',['imageCompress']);
 gulp.task('default',['see','serve'] );
 
@@ -349,15 +351,11 @@ gulp.task('build',function(){
 				'pug',
 				'stylus',
 				'prefix',
-				'copy:font',
-				'copy:js',
-				'copy:css',
-				'min:css',
-				'min:js',
+				'copy',
+				'min',
 				'img',
 				'svg',
 				'make'
-				//'zip'
 		)
 });
 
@@ -367,18 +365,26 @@ gulp.task('build:ftp',function(){
 				'pug',
 				'stylus',
 				'prefix',
-				'copy:font',
-				'copy:js',
-				'copy:css',
-				'min:css',
-				'min:js',
-				//'screenshot',
+				'copy',
+				'min',
 				'img',
 				'svg',
 				'make',
-				//'zip',
-				//'guide',
 				'ftp'
-				//'template'
+		)
+});
+
+gulp.task('build:ftp:img',function(){
+		runSequence(
+				'pug',
+				'stylus',
+				'prefix',
+				'copy',
+				'min',
+				'screenshot',
+				'img',
+				'svg',
+				'make',
+				'ftp'
 		)
 });

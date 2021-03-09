@@ -59,7 +59,7 @@ $(document).ready(function () {
 		closeModal();
 	});
 
-	$('.modal-wrap').click(function(e){
+	body.on('mousedown',function(e){
 		e.target.className === 'modal-wrap' ? closeModal() : false
 	});
 
