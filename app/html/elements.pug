@@ -95,15 +95,14 @@ style(type='text/css').
 
 	.divider
 
-
-
 	.f.fw.gap-12
 		.btn.btn--md.btn--mark Стандартная
 		.btn.btn--md.btn--mark.disable Неактивная
 		.btn.btn--md.btn--light Дополнительная
-		.btn.btn--md.btn--light.f.f-mid.gap-16
-			span C  иконкой
-			+icon("arrow-right","icon icon--sm")
+		.btn.btn--md.btn--light
+			.f.f-mid.gap-16
+				span C  иконкой
+				+icon("arrow-right","icon icon--sm")
 
 	.divider
 
@@ -111,9 +110,10 @@ style(type='text/css').
 		.btn.btn--sm.btn--mark Стандартная
 		.btn.btn--sm.btn--mark.disable Неактивная
 		.btn.btn--sm.btn--light Дополнительная
-		.btn.btn--sm.btn--light.f.f-mid.gap-8
-			span C  иконкой
-			+icon("arrow-right","icon icon--xs")
+		.btn.btn--sm.btn--light
+			.f.f-mid.gap-8
+				span C  иконкой
+				+icon("arrow-right","icon icon--xs")
 
 	.divider
 	a(href="#").link--mark Цветная ссылка

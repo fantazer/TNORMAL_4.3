@@ -40,16 +40,36 @@ for $windowSizeItem in $windowSize
 // calc flex-wrap media === end
 
 // calc gap
-calcGap(size1,size2,size3)
-	grid-gap (size1 px)
+gap($gapVal)
+	margin-top: "calc(-1 * (%s))" % $gapVal
+	margin-left: "calc(-1 * (%s))" % $gapVal
+	//width: "calc(100% + (%s))" % $gapVal
+	&>*
+		margin-top $gapVal
+		margin-left $gapVal
+
+calcFlexGap(size1,size2,size3)
+	gap(size1 px)
 	+below(1024px)
-		grid-gap (size2 px)
+		gap(size2 px)
 	+below(640px)
-		grid-gap (size3 px)
+		gap(size3 px)
+
+calcGap(size1,size2,size3)
+	grid-gap size1 px
+	+below(1024px)
+		grid-ga size2 px
+	+below(640px)
+		grid-ga size3 px
+
+for $gridGapItem in $gridGap
+	.f-gap-{$gridGapItem}
+		calcFlexGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
 
 for $gridGapItem in $gridGap
 	.gap-{$gridGapItem}
 		calcGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
+
 // calc gap === end
 
 // calc width
