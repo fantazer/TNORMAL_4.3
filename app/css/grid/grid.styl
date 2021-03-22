@@ -1,6 +1,5 @@
 @import '../variable/config/_config.styl'
 
-
 //START GRID
 $gridList = (1..12)
 
@@ -29,7 +28,6 @@ for $windowSizeItem in $windowSize
 			.{$windowSizeItem[0]}__g-{num}-{numEl}
 				@media only screen and (max-width: $windowSizeItem[1]px)
 					grid-column num / numEl+1
-
 // END GRID
 
 // calc flex-wrap media
@@ -43,24 +41,27 @@ for $windowSizeItem in $windowSize
 gap($gapVal)
 	margin-top: "calc(-1 * (%s))" % $gapVal
 	margin-left: "calc(-1 * (%s))" % $gapVal
-	//width: "calc(100% + (%s))" % $gapVal
 	&>*
 		margin-top $gapVal
 		margin-left $gapVal
 
 calcFlexGap(size1,size2,size3)
 	gap(size1 px)
-	+below(1024px)
-		gap(size2 px)
-	+below(640px)
-		gap(size3 px)
+	if size2
+		+below(1024px)
+			gap(size2 px)
+	if size3
+		+below(640px)
+			gap(size3 px)
 
 calcGap(size1,size2,size3)
 	grid-gap size1 px
-	+below(1024px)
-		grid-ga size2 px
-	+below(640px)
-		grid-ga size3 px
+	if size2
+		+below(1024px)
+			grid-gap size2 px
+	if size3
+		+below(640px)
+			grid-gap size3 px
 
 for $gridGapItem in $gridGap
 	.f-gap-{$gridGapItem}
@@ -69,11 +70,9 @@ for $gridGapItem in $gridGap
 for $gridGapItem in $gridGap
 	.gap-{$gridGapItem}
 		calcGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
-
 // calc gap === end
 
 // calc width
-
 for itemWidth in (1..20)
 	.w{itemWidth*5}
 		width (itemWidth*5) %
@@ -83,4 +82,9 @@ for $windowSizeItem in $windowSize
 		.{$windowSizeItem[0]}__w{itemWidth*5}
 			@media only screen and (max-width: $windowSizeItem[1]px)
 					width (itemWidth*5) %
+
+for itemListWmax in $listWmax
+	.wmax-{itemListWmax}
+		max-width itemListWmax px
+		width: 100%
 // calc width === end

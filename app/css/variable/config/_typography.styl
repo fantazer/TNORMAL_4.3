@@ -14,10 +14,6 @@ for $listFwItem in $listFw
 		font-weight $listFwItem
 // calc font weight === end
 
-font('Nunito-Regular','Nunito', 400)
-font('Nunito-Bold','Nunito', 700)
-$font = 'Nunito', sans-serif
-
 .type--mid
 	text-align center
 
@@ -51,14 +47,14 @@ a
 	tr()
 	&:hover
 		color darken($linkColor,20)
-	&:visiter
+	&:visit
 		color darken($linkColor,30)
 
 .link--mark
 	color $mark
 	&:hover
 		color darken($mark,20)
-	&:visiter
+	&:visit
 		color darken($mark,30)
 
 .link--main
@@ -66,7 +62,7 @@ a
 	hover-underline($linkColor)
 	&:hover
 		color darken($linkColor,20)
-	&:visiter
+	&:visit
 		color darken($linkColor,30)
 
 .link--text

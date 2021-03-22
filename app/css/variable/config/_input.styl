@@ -20,8 +20,16 @@
 
 // calc border size
 for $listBrItem in $listBr
-	.br--{$listBrItem}
+	.br-{$listBrItem}
 		border-radius $listBrItem px
+
+.br-round
+	border-radius 50%
+
+.bor
+	border-width 1px
+	border-style solid
+
 // calc border size === end
 
 // checkbox + radio style
@@ -152,8 +160,6 @@ for $listBrItem in $listBr
 	span
 		outline: none
 		user-select: none
-
-
 
 // drop
 .dropdown

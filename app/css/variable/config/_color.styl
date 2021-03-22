@@ -24,3 +24,19 @@ for $colorsName,$colorsVal in $colors
 		color: $colorsVal
 	.icon--{$colorsName}
 		fill $colorsVal
+	.bor--{$colorsName}
+		border-color $colorsVal
+
+for $colorsName,$colorsVal in $colors
+	.bg-h--{$colorsName}
+		&:hover
+			background: darken($colorsVal,5)
+	.type-h--{$colorsName}
+		&:hover
+			color: darken($colorsVal,5)
+	.icon-h--{$colorsName}
+		&:hover
+			fill darken($colorsVal,5)
+	.bor-h--{$colorsName}
+		&:hover
+			border-color darken($colorsVal,5)

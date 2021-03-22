@@ -37,6 +37,7 @@
     "vinyl-ftp": "^0.4.4",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^4.0.2",
-    "gulp-pug-inheritance": "^0.2.1"
+    "gulp-pug-inheritance": "^0.2.1",
+    "gulp-group-css-media-queries": "^1.2.2"
   }
 }

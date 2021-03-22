@@ -3,34 +3,38 @@
 // md - 768
 // sm - 640
 
+
+font('Nunito-Regular','Nunito', 400)
+font('Nunito-Bold','Nunito', 700)
+$font = 'Nunito', sans-serif
+
 //$windowSize = (xl lg md sm)
 $windowSize = ("xl" 1280),\
 							("lg" 1024),\
 							("md" 768),\
-							("sm" 640)
+							("sm" 480)
 
 //Extends size
-$listExtend = (4 4 4),\
-							(8 8 8),\
-							(10 10 10),\
-							(12 12 12),\
-							(16 16 16),\
-							(24 16 16),\
-							(24 16 16),\
-							(32 24 24),\
+$listExtend = (4),\
+							(8),\
+							(10),\
+							(12),\
+							(16),\
+							(24 16),\
+							(32 24),\
 							(48 32 24),\
 							(64 48 24),\
 							(80 64 32),\
 							(100 68 36)
 
 //Grid gap size
-$gridGap = (4 4 4),\
-					(8 8 8),\
-					(12 12 12),\
-					(16 16 16),\
-					(20 16 16),\
-					(24 16 16),\
-					(32 24 24)
+$gridGap = (4),\
+					(8),\
+					(12),\
+					(16),\
+					(20 16),\
+					(24 16),\
+					(32 24)
 
 $listType = ("xs" 12 10),\
 						("sm" 14 12),\
@@ -55,6 +59,9 @@ $listBr = (4 8 12 16 20 24 32 44 64)
 
 //Font weight
 $listFw = (300 400 500 600 700 900)
+
+//width-max container size
+$listWmax = (500 545 640 820 1320)
 
 //color
 $mark = #6b33b2
@@ -103,7 +110,6 @@ $colors = {
 	'grayPrimary':$grayPrimary,
 	'gray':$gray,
 	'grayLight':$grayLight,
-	'pink':$pink,
 	'violet':$violet,
 	'orange':$orange,
 	'blue':$blue,

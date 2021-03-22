@@ -32,6 +32,7 @@ var prettify = require('gulp-html-prettify');
 var cached = require('gulp-cached');
 const changed = require('gulp-changed');
 var pugInheritance = require('gulp-pug-inheritance');
+var gcmq = require('gulp-group-css-media-queries');
 
 // ########## make img ###############
 
@@ -132,6 +133,7 @@ gulp.task('prefix', function () {
 		.pipe(autoprefixer({
 			browsers: ['last 15 versions']
 		}))
+		.pipe(gcmq())
 		.pipe(gulp.dest('app/css/'));
 });
 

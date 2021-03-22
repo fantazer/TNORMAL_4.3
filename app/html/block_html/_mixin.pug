@@ -2,7 +2,6 @@ mixin icon(name,cls)
   svg(class=cls)
     use(xlink:href="#" + name)
 
-//+checkbox('Выбрать пункт 1',true,disable)
 mixin checkbox(text,checked,className)
   .check-el
     label.style-label.style-label--checkbox(class = className )
@@ -12,7 +11,6 @@ mixin checkbox(text,checked,className)
       .style-input-text !{text}
 
 
-//+radio('Выбрать пункт 1',"list","true",'disable')
 mixin radio(text,group,checked,className)
   .check-el
     label.style-label.style-label--radio(class = className)
@@ -21,7 +19,6 @@ mixin radio(text,group,checked,className)
         .icon-radio
       .style-input-text=text
 
-// +incr(1,'.incr--lg',1)
 mixin incr(state,className, min)
   .incr.js-incr-wrap(class= className data-min=min)
     .incr-nav.js-inc-nav.js-inc-nav--minus

@@ -27,11 +27,10 @@ $(document).ready(function () {
 	if (detectIE() <= 14 && detectIE()) {
 		$('body').empty();
 		$('body').prepend('' +
-			'<div class="old-browser">' +
-			'<div class="old-browser-text"> Сайт не поддерживае Браузер Internet Explorer</div><br>' +
-			'<div class="old-browser-text"> Установите <br><br> Chrome Firefox Opera </div><br>' +
+			'<div class="bg--gray page">' +
+			'<div class="type--lg type--white type--mid mt-80 mb-12"> Сайт не поддерживае Браузер Internet Explorer</div><br>' +
+			'<div class="type--white type--mid"> Установите <br><br> Chrome Firefox Opera </div><br>' +
 			'</div>');
-
 	}
 	// ==== clear storage =====
 	/*localStorage.clear();
@@ -41,20 +40,7 @@ $(document).ready(function () {
 	});*/
 	// ==== clear storage end =====
 
-	/* ###### For SlideToggle Elements  ######*/
-	/*var hideToggle = function(targetClick,toggleEl) {
-		$(targetClick).click(function(event){
-				event.stopPropagation();
-				$(toggleEl).slideToggle("fast");
-		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.icon-bars','.top-menu_link');*/
+
 })
 
 //for init SVG

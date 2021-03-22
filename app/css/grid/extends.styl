@@ -1,44 +1,82 @@
 @import '../variable/config/_config.styl'
 
-calcExtendBoth(nameExtend,size1,size2,size3)
-	{nameExtend} (size1 px) 0
-	+below(1024px)
-		{nameExtend} (size2 px) 0
-	+below(640px)
-		{nameExtend} (size3 px) 0
-
 calcExtend(nameExtend,size1,size2,size3)
 	{nameExtend} (size1 px)
-	+below(1024px)
-		{nameExtend} (size2 px)
-	+below(640px)
-		{nameExtend} (size3 px)
+	if size2
+		+below(1024px)
+			{nameExtend} (size2 px)
+	if size3
+		+below(640px)
+			{nameExtend} (size3 px)
 
-$listSize = (m p ms ps mt mb pt pb)
+calcExtendBothVert(nameExtend,size1,size2,size3)
+	{nameExtend}-top size1 px
+	{nameExtend}-bottom size1 px
+	if size2
+		+below(1024px)
+			{nameExtend}-top size1 px
+			{nameExtend}-bottom size1 px
+	if size3
+		+below(640px)
+			{nameExtend}-top size1 px
+			{nameExtend}-bottom size1 px
+
+calcExtendBothHor(nameExtend,size1,size2,size3)
+	{nameExtend}-left size1 px
+	{nameExtend}-right size1 px
+	if size2
+		+below(1024px)
+			{nameExtend}-left size1 px
+			{nameExtend}-right size1 px
+	if size3
+		+below(640px)
+			{nameExtend}-left size1 px
+			{nameExtend}-right size1 px
+
+$listSize = ("margin" m),\
+						("margin-top" mt),\
+						("margin-right" mr),\
+						("margin-bottom" mb),\
+						("margin-left" ml),\
+						("padding" p),\
+						("padding-top" pt),\
+						("padding-right" pr),\
+						("padding-bottom" pb),\
+						("padding-left" pl)
+
+$listSizeVert = ("margin" msv),\
+								("padding" psv)
+
+$listSizeHor = ("margin" msh),\
+								("padding" psh)
 
 for listSizeItem in $listSize
 	for listItem in $listExtend
-		.{listSizeItem}-{listItem[0]}
-			if listSizeItem == ms
-				calcExtendBoth('margin',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == ps
-				calcExtendBoth('padding',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == m
-				calcExtend('margin',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == p
-				calcExtend('padding',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == mt
-				calcExtend('margin-top',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == mb
-				calcExtend('margin-bottom',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == pt
-				calcExtend('padding-top',listItem[0],listItem[1],listItem[2])
-			if listSizeItem == pb
-				calcExtend('padding-bottom',listItem[0],listItem[1],listItem[2])
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtend(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+
+// extend sides
+for listSizeItem in $listSizeVert
+	for listItem in $listExtend
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtendBothVert(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+
+for listSizeItem in $listSizeHor
+	for listItem in $listExtend
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtendBothHor(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+//  === end
+
 
 //simple
-.m-la
+.ml-a
 	margin-left auto
 
-.m-ra
+.mr-a
 	margin-right auto
+
+.mt-a
+	margin-top: auto
+
+.mb-a
+	margin-bottom: auto
