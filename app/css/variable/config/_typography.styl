@@ -1,4 +1,23 @@
 //  ============================ Typography ============================
+// icon size
+for $listIconItem in $listIcon
+	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
+		width $listIconItem[1] px
+		height $listIconItem[1] px
+// icon size === end
+
+// line height
+.type--lh-1
+	line-height:1
+.type--lh-1_2
+	line-height:1.2
+.type--lh-1_4
+	line-height:1.4
+.type--lh-1_6
+	line-height:1.6
+// line height === end
+
+
 
 // calc font size
 for $listTypeItem in $listType
@@ -118,11 +137,5 @@ p
 			&:last-child
 				margin-bottom: 0
 
-// calc icon size
-for $listIconItem in $listIcon
-	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
-		width $listIconItem[1] px
-		height $listIconItem[1] px
-// calc icon size === end
 
 

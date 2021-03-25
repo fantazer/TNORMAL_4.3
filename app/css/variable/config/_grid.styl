@@ -1,12 +1,4 @@
-.g
-	display: grid
-
-.f
-	display: flex
-
-.dif
-	display: inline-flex
-
+// FLEX
 .fw
 	flex-wrap wrap
 
@@ -51,8 +43,27 @@
 .alignSelf-fe
 	align-self: flex-end
 
+.f-grow
+	flex-grow 1
+
+// FLEX === end
+
+
+// Display
+.f
+	display: flex
+
+.g
+	display: grid
+
+.dif
+	display: inline-flex
+
 .db
 	display block
+
+.di
+	display: inline
 
 .dib
 	display inline-block
@@ -66,15 +77,25 @@
 .pos-f
 	position: fixed
 
+// Display === end
 
+// Flex order
+for $item in (1..8)
+	.order-{$item}
+		order $item
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__order-{$item}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				order $item
+// Flex order === end
 
+// Visible mobile
 for $windowSizeItem in $windowSize
 	.{$windowSizeItem[0]}__hide
-		//@media only screen and ({max-width} - ({$windowSizeItem[1]})px)
 		@media only screen and (max-width: $windowSizeItem[1]px)
 			display none!important
 	.{$windowSizeItem[0]}__snow
 		@media only screen and (min-width: $windowSizeItem[1]px)
 			display block
-
+// Visible mobile === end
 
