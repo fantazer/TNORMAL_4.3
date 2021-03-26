@@ -95,6 +95,7 @@ style(type='text/css').
 
 	.divider
 
+	h2 Buttons
 	.f.fw.gap-12
 		.btn.btn--md.btn--mark Стандартная
 		.btn.btn--md.btn--mark.disable Неактивная
@@ -114,6 +115,31 @@ style(type='text/css').
 			.f.f-mid.gap-8
 				span C  иконкой
 				+icon("arrow-right","icon icon--xs")
+
+	h2 Checkbox + Radio
+	.mb-12
+		+checkbox('Выбрать пункт 1')
+	.mb-12
+		+checkbox('Выбрать пункт 2',"checked")
+	.mb-12
+		+checkbox('Выбрать пункт 2',"false",'disable')
+
+	.mb-12
+		+radio('Выбрать пункт 1',"list","true")
+	.mb-12
+		+radio('Выбрать пункт 2',"list")
+	.mb-12
+		+radio('Выбрать пункт 3',"list",false,'disable')
+
+	h2 Switch
+	.buttons-list
+		.mb-12
+			.switch.js-toggle
+		.mb-12
+			.switch.active.js-toggle
+		.mb-12
+			.switch.disabled
+
 
 	.divider
 	a(href="#").link--mark Цветная ссылка

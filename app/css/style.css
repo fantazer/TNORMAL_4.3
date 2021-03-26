@@ -7097,6 +7097,40 @@ a:visit {
   background: #f1f2f6;
   color: #111;
 }
+.switch {
+  position: relative;
+  background: #adaeb9;
+  height: 34px;
+  min-width: 62px;
+  width: 62px;
+  border-radius: 18px;
+}
+.switch:hover {
+  cursor: pointer;
+}
+.switch:before {
+  content: '';
+  transition: all 0.4s;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 6px;
+  top: 4.5px;
+}
+.switch.active {
+  background: #5da600;
+}
+.switch.active:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: calc(100% - 30px);
+}
 /* block footer*/
 /*block footer end */
 body {
@@ -7139,6 +7173,7 @@ body {
 }
 .content {
   flex-grow: 1;
+  overflow: hidden;
 }
 .content--mid {
   display: flex;

@@ -247,3 +247,32 @@ for $listBrItem in $listBr
 		background: $graySnow
 		color black
 // drop === end
+
+// switch
+.switch
+	position relative
+	background: $gray
+	height: 34px
+	min-width: 62px
+	width: 62px
+	br(18px)
+	cp()
+	&:before
+		content ''
+		tr()
+		size 24px
+		round()
+		background: white
+		position absolute
+		left 6px
+		top 4.5px
+	&.active
+		background: $stateSuccess
+		&:before
+			content ''
+			size 24px
+			round()
+			background: white
+			position absolute
+			left calc(100% - 30px)
+// switch === end
