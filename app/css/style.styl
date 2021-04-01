@@ -232,4 +232,41 @@ body
 // slider menu === end
 
 
+// rating
+.rating
+	f()
+	align-items center
+.rating--msg
+	padding: 3px 10px
+	background: white
+	br(12px)
+	font-size: 12px
+.rating-wrap
+	f()
+	align-items center
+	position relative
+.rating-val
+	color white
+	line-height: 1
+	margin: -4px 0 0 4px
+
+.rating--fill
+	position absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	f()
+	align-items center
+	overflow hidden
+.rating__el
+	margin-right: 5px
+	.icon
+		size 26px
+		fill $grayLight
+	&.active
+		.icon
+			fill #FFA800
+// rating === end
+
 

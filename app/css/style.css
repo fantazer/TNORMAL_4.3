@@ -36,6 +36,11 @@
 .cp:hover {
   cursor: pointer;
 }
+.bg-full {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select:focus,
   textarea:focus,
@@ -7397,6 +7402,47 @@ body {
 }
 .slide-block-wrap {
   padding: 24px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.rating--msg {
+  padding: 3px 10px;
+  background: #fff;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.rating-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.rating-val {
+  color: #fff;
+  line-height: 1;
+  margin: -4px 0 0 4px;
+}
+.rating--fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.rating__el {
+  margin-right: 5px;
+}
+.rating__el .icon {
+  width: 26px;
+  height: 26px;
+  fill: #c4c5cc;
+}
+.rating__el.active .icon {
+  fill: #ffa800;
 }
 @-moz-keyframes slideInDown {
   from {
