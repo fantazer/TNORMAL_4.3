@@ -17,13 +17,14 @@ for $listIconItem in $listIcon
 	line-height:1.6
 // line height === end
 
-
-
 // calc font size
 for $listTypeItem in $listType
 	.type--{$listTypeItem[0]},.type--{$listTypeItem[1]}
 		+below(768px)
 			font-size $listTypeItem[2] px
+		if $listTypeItem[3]
+			+below(640px)
+				font-size $listTypeItem[3] px
 		font-size $listTypeItem[1] px
 // calc font size === end
 

@@ -37,14 +37,6 @@ for $windowSizeItem in $windowSize
 			flex-wrap wrap
 // calc flex-wrap media === end
 
-// calc gap
-gap($gapVal)
-	margin-top: "calc(-1 * (%s))" % $gapVal
-	margin-left: "calc(-1 * (%s))" % $gapVal
-	&>*
-		margin-top $gapVal
-		margin-left $gapVal
-
 calcFlexGap(size1,size2,size3)
 	gap(size1 px)
 	if size2

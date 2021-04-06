@@ -221,3 +221,11 @@ bsh-hover()
 	transition box-shadow .8s
 	&:hover
 		box-shadow 0 18px 32px #e3e3e3
+
+// calc gap
+gap($gapVal)
+	margin-top: "calc(-1 * (%s))" % $gapVal
+	margin-left: "calc(-1 * (%s))" % $gapVal
+	&>*
+		margin-top $gapVal
+		margin-left $gapVal
