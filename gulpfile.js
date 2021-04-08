@@ -149,6 +149,7 @@ gulp.task('stylus', function () {
 					use:[rupture()],
 					'include css': true
 			})).on('error', errorhandler)
+			.pipe(gcmq())
 			.pipe(gulp.dest('app/css/'))
 });
 //css beautify
