@@ -12,6 +12,10 @@
 	align-items center
 	justify-content center
 
+.f-between
+	align-items center
+	justify-content space-between
+
 .f-aic
 	align-items center
 
@@ -21,9 +25,14 @@
 .f-aifs
 	align-items: flex-start
 
-.f-between
-	align-items center
-	justify-content space-between
+.f-asfs
+	align-self: flex-start
+
+.f-asfe
+	align-self: flex-end
+
+.f-asc
+	align-self: center
 
 .f-jcsb
 	justify-content space-between
@@ -37,15 +46,6 @@
 .f-jcfs
 	justify-content flex-start
 
-.f-asfs
-	align-self: flex-start
-
-.f-asfe
-	align-self: flex-end
-
-.f-asc
-	align-self: center
-
 .f-grow
 	flex-grow 1
 
@@ -58,6 +58,12 @@
 
 .g
 	display: grid
+
+.g-afc
+	grid-auto-flow column
+
+.g-afr
+	grid-auto-flow row
 
 .dif
 	display: inline-flex
@@ -82,23 +88,4 @@
 
 // Display === end
 
-// Flex order
-for $item in (1..8)
-	.order-{$item}
-		order $item
-	for $windowSizeItem in $windowSize
-		.{$windowSizeItem[0]}__order-{$item}
-			@media only screen and (max-width: $windowSizeItem[1]px)
-				order $item
-// Flex order === end
-
-// Visible mobile
-for $windowSizeItem in $windowSize
-	.{$windowSizeItem[0]}__hide
-		@media only screen and (max-width: $windowSizeItem[1]px)
-			display none!important
-	.{$windowSizeItem[0]}__snow
-		@media only screen and (min-width: $windowSizeItem[1]px)
-			display block
-// Visible mobile === end
 

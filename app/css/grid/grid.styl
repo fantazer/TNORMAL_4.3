@@ -30,13 +30,6 @@ for $windowSizeItem in $windowSize
 					grid-column num / numEl+1
 // END GRID
 
-// calc flex-wrap media
-for $windowSizeItem in $windowSize
-	.{$windowSizeItem[0]}__fw
-		@media only screen and (max-width: $windowSizeItem[1]px)
-			flex-wrap wrap
-// calc flex-wrap media === end
-
 // calc gap
 gap($gapVal)
 	margin-top: "calc(-1 * (%s))" % $gapVal
@@ -88,3 +81,60 @@ for itemListWmax in $listWmax
 		max-width itemListWmax px
 		width: 100%
 // calc width === end
+
+// Flex-wrap
+for $windowSizeItem in $windowSize
+	.{$windowSizeItem[0]}__fw
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			flex-wrap wrap
+// Flex-wrap  === end
+
+// Flex order
+for $item in (1..8)
+	.order-{$item}
+		order $item
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__order-{$item}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				order $item
+// Flex order === end
+
+// Flex flow
+$flexFlow = ("f-col" column),\
+						("f-row" row)
+
+for $flexFlowItem in $flexFlow
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$flexFlowItem[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				flex-flow $flexFlowItem[1]
+// Flex flow === end
+
+// Flex align items
+$flexAlign = ("f-aic" "align-items" center),\
+							("f-aife" "align-items" flex-end),\
+							("f-aifs" "align-items" flex-start),\
+							("f-asfs" "align-self" flex-start),\
+							("f-asfe" "align-self" flex-end),\
+							("f-asc" "align-self" center),\
+							("f-jcsb" "justify-content" space-between),\
+							("f-jcc" "justify-content" center),\
+							("f-jcfe" "justify-content" flex-end),\
+							("f-jcfs" "justify-content" flex-start)
+
+for $flexAlignItem in $flexAlign
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$flexAlignItem[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				{$flexAlignItem[1]} $flexAlignItem[2]
+// Flex align items === end
+
+// Visible mobile
+for $windowSizeItem in $windowSize
+	.{$windowSizeItem[0]}__hide
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			display none!important
+	.{$windowSizeItem[0]}__snow
+		@media only screen and (min-width: $windowSizeItem[1]px)
+			display block
+// Visible mobile === end
