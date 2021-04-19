@@ -50,10 +50,20 @@ $listSizeVert = ("margin" msv),\
 $listSizeHor = ("margin" msh),\
 								("padding" psh)
 
+// extend sides simple
 for listSizeItem in $listSize
 	for listItem in $listExtend
 		.{listSizeItem[1]}-{listItem[0]}
 			calcExtend(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+
+//+media
+for $windowSizeItem in $windowSize
+	for listSizeItem in $listSize
+		for listItem in $listExtend
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				.{$windowSizeItem[0]}__{listSizeItem[1]}-{listItem[0]}
+					{listSizeItem[0]} listItem[0] px
+// extend sides simple === end
 
 // extend sides
 for listSizeItem in $listSizeVert
@@ -61,14 +71,33 @@ for listSizeItem in $listSizeVert
 		.{listSizeItem[1]}-{listItem[0]}
 			calcExtendBothVert(listSizeItem[0],listItem[0],listItem[1],listItem[2])
 
+//+media
+for $windowSizeItem in $windowSize
+	for listSizeItem in $listSizeVert
+		for listItem in $listExtend
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				.{$windowSizeItem[0]}__{listSizeItem[1]}-{listItem[0]}
+					{listSizeItem[0]}-top listItem[0] px
+					{listSizeItem[0]}-bottom listItem[0] px
+
 for listSizeItem in $listSizeHor
 	for listItem in $listExtend
 		.{listSizeItem[1]}-{listItem[0]}
 			calcExtendBothHor(listSizeItem[0],listItem[0],listItem[1],listItem[2])
-//  === end
 
+//+media
+for $windowSizeItem in $windowSize
+	for listSizeItem in $listSizeHor
+		for listItem in $listExtend
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				.{$windowSizeItem[0]}__{listSizeItem[1]}-{listItem[0]}
+					{listSizeItem[0]}-left listItem[0] px
+					{listSizeItem[0]}-right listItem[0] px
 
-//simple
+// extend sides === end
+
+//simple extend
+
 .ml-a
 	margin-left auto
 
@@ -80,3 +109,17 @@ for listSizeItem in $listSizeHor
 
 .mb-a
 	margin-bottom: auto
+
+//+media
+$listSimpleExtend = ("margin-left" ml-a),\
+										("margin-right" mr-a),\
+										("margin-top" mt-a),\
+										("margin-bottom" mb-a)
+
+for $windowSizeItem in $windowSize
+	for $listSimpleExtendItem in $listSimpleExtend
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				.{$windowSizeItem[0]}__{$listSimpleExtendItem[1]}
+					{$listSimpleExtendItem[0]} auto
+
+//simple extend === end

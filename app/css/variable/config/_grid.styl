@@ -1,12 +1,26 @@
-// FLEX
-.fw
-	flex-wrap wrap
+// Flex state items
+$flexState = ("f-aic" "align-items" center),\
+							("f-aife" "align-items" flex-end),\
+							("f-aifs" "align-items" flex-start),\
+							("f-asfs" "align-self" flex-start),\
+							("f-asfe" "align-self" flex-end),\
+							("f-asc" "align-self" center),\
+							("f-jcsb" "justify-content" space-between),\
+							("f-jcc" "justify-content" center),\
+							("f-jcfe" "justify-content" flex-end),\
+							("f-jcfs" "justify-content" flex-start),\
+							("f-grow" "flex-grow" 1),\
+							("fw" "flex-wrap" wrap),\
+							("f-col" "flex-direction" column),\
+							("f-row" "flex-direction" row)
 
-.f-col
-	flex-direction column
-
-.f-row
-	flex-direction row
+for $flexStateItem in $flexState
+	.{$flexStateItem[0]}
+		{$flexStateItem[1]} $flexStateItem[2]
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$flexStateItem[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				{$flexStateItem[1]} $flexStateItem[2]
 
 .f-mid
 	align-items center
@@ -16,76 +30,27 @@
 	align-items center
 	justify-content space-between
 
-.f-aic
-	align-items center
-
-.f-aife
-	align-items: flex-end
-
-.f-aifs
-	align-items: flex-start
-
-.f-asfs
-	align-self: flex-start
-
-.f-asfe
-	align-self: flex-end
-
-.f-asc
-	align-self: center
-
-.f-jcsb
-	justify-content space-between
-
-.f-jcc
-	justify-content center
-
-.f-jcfe
-	justify-content flex-end
-
-.f-jcfs
-	justify-content flex-start
-
-.f-grow
-	flex-grow 1
-
-// FLEX === end
-
+// Flex state items === end
 
 // Display
-.f
-	display: flex
+$display = ("f" "display" flex),\
+							("g" "display" grid),\
+							("g-afc" "grid-auto-flow" column),\
+							("g-afr" "grid-auto-flow" row),\
+							("dif" "display" inline-flex),\
+							("dig" "display" inline-grid),\
+							("db" "display" block),\
+							("di" "display" inline),\
+							("dib" "display" inline-block),\
+							("pos-r" "position" relative),\
+							("pos-a" "position" absolute),\
+							("pos-f" "position" fixed)
 
-.g
-	display: grid
-
-.g-afc
-	grid-auto-flow column
-
-.g-afr
-	grid-auto-flow row
-
-.dif
-	display: inline-flex
-
-.db
-	display block
-
-.di
-	display: inline
-
-.dib
-	display inline-block
-
-.pos-r
-	position relative
-
-.pos-a
-	position absolute
-
-.pos-f
-	position: fixed
-
+for $displayItem in $display
+	.{$displayItem[0]}
+		{$displayItem[1]} $displayItem[2]
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$displayItem[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				{$displayItem[1]} $displayItem[2]
 // Display === end
-
-

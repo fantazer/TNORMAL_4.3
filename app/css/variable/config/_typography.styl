@@ -4,6 +4,11 @@ for $listIconItem in $listIcon
 	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
 		width $listIconItem[1] px
 		height $listIconItem[1] px
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__icon--{$listIconItem[0]},.{$windowSizeItem[0]}__icon--{$listIconItem[1]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				width $listIconItem[1] px
+				height $listIconItem[1] px
 // icon size === end
 
 // line height
@@ -26,6 +31,9 @@ for $listTypeItem in $listType
 			+below(640px)
 				font-size $listTypeItem[3] px
 		font-size $listTypeItem[1] px
+		for $windowSizeItem in $windowSize
+			.{$windowSizeItem[0]}__type--{$listTypeItem[0]},.{$windowSizeItem[0]}__type--{$listTypeItem[1]}
+				font-size $listTypeItem[1] px
 // calc font size === end
 
 // calc font weight
@@ -34,27 +42,19 @@ for $listFwItem in $listFw
 		font-weight $listFwItem
 // calc font weight === end
 
-.type--mid
-	text-align center
-
-.type--left
-	text-align left
-
-.type--right
-	text-align right
-
 // type align
 $typeAlign = ("type--left" left),\
 							("type--mid" center),\
 							("type--right" right)
 
 for $itemType in $typeAlign
+	.{$itemType[0]}
+		text-align $itemType[1]
 	for $windowSizeItem in $windowSize
 		.{$windowSizeItem[0]}__{$itemType[0]}
 			@media only screen and (max-width: $windowSizeItem[1]px)
 				text-align $itemType[1]
 // type align === end
-
 
 .type--ws
 	white-space nowrap
@@ -80,14 +80,14 @@ a
 	tr()
 	&:hover
 		color darken($linkColor,20)
-	&:visit
+	&:visited
 		color darken($linkColor,30)
 
 .link--mark
 	color $mark
 	&:hover
 		color darken($mark,20)
-	&:visit
+	&:visited
 		color darken($mark,30)
 
 .link--main
@@ -95,7 +95,7 @@ a
 	hover-underline($linkColor)
 	&:hover
 		color darken($linkColor,20)
-	&:visit
+	&:visited
 		color darken($linkColor,30)
 
 .link--text
@@ -150,6 +150,3 @@ p
 				top 6px
 			&:last-child
 				margin-bottom: 0
-
-
-
