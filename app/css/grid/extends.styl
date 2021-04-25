@@ -96,8 +96,17 @@ for $windowSizeItem in $windowSize
 
 // extend sides === end
 
-//simple extend
+// extend percent
+for $paddingPercentItem in $paddingPercent
+	.p-{$paddingPercentItem}p
+		padding ($paddingPercentItem)%
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__p-{$paddingPercentItem}p
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				padding ($paddingPercentItem)%
+// extend percent === end
 
+//simple extend
 .ml-a
 	margin-left auto
 
@@ -123,3 +132,4 @@ for $windowSizeItem in $windowSize
 					{$listSimpleExtendItem[0]} auto
 
 //simple extend === end
+

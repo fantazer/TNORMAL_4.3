@@ -32,25 +32,46 @@ for $flexStateItem in $flexState
 
 // Flex state items === end
 
+
+generateStyle(generateStyleItem)
+	for $displayItem in generateStyleItem
+		.{$displayItem[0]}
+			{$displayItem[1]} $displayItem[2]
+		for $windowSizeItem in $windowSize
+			.{$windowSizeItem[0]}__{$displayItem[0]}
+				@media only screen and (max-width: $windowSizeItem[1]px)
+					{$displayItem[1]} $displayItem[2]
+
 // Display
 $display = ("f" "display" flex),\
-							("g" "display" grid),\
-							("g-afc" "grid-auto-flow" column),\
-							("g-afr" "grid-auto-flow" row),\
-							("dif" "display" inline-flex),\
-							("dig" "display" inline-grid),\
-							("db" "display" block),\
-							("di" "display" inline),\
-							("dib" "display" inline-block),\
-							("pos-r" "position" relative),\
-							("pos-a" "position" absolute),\
-							("pos-f" "position" fixed)
+						("g" "display" grid),\
+						("g-afc" "grid-auto-flow" column),\
+						("g-afr" "grid-auto-flow" row),\
+						("dif" "display" inline-flex),\
+						("dig" "display" inline-grid),\
+						("db" "display" block),\
+						("di" "display" inline),\
+						("dib" "display" inline-block)
 
-for $displayItem in $display
-	.{$displayItem[0]}
-		{$displayItem[1]} $displayItem[2]
-	for $windowSizeItem in $windowSize
-		.{$windowSizeItem[0]}__{$displayItem[0]}
-			@media only screen and (max-width: $windowSizeItem[1]px)
-				{$displayItem[1]} $displayItem[2]
+
+$position = ("pos-r" "position" relative),\
+						("pos-a" "position" absolute),\
+						("pos-s" "position" static),\
+						("pos-f" "position" fixed)
+
+$objectFit = ("obj-f" "object-fit" fill),\
+							("obj-c" "object-fit" contain),\
+							("obj-cov" "object-fit" cover),\
+							("obj-none" "object-fit" none)
+
+$objectPosition = ("obj-pos-t" "object-position" top),\
+							("obj-pos-r" "object-position" right),\
+							("obj-pos-b" "object-position" bottom),\
+							("obj-pos-left" "object-position" left)
+
+generateStyle($display)
+generateStyle($position)
+generateStyle($objectFit)
+generateStyle($objectPosition)
 // Display === end
+

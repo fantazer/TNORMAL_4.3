@@ -1584,6 +1584,22 @@
   padding-right: 100px;
 }
 
+.p-10p {
+  padding: 10%;
+}
+
+.p-20p {
+  padding: 20%;
+}
+
+.p-30p {
+  padding: 30%;
+}
+
+.p-50p {
+  padding: 50%;
+}
+
 .ml-a {
   margin-left: auto;
 }
@@ -1724,8 +1740,44 @@
   position: absolute;
 }
 
+.pos-s {
+  position: static;
+}
+
 .pos-f {
   position: fixed;
+}
+
+.obj-f {
+  object-fit: fill;
+}
+
+.obj-c {
+  object-fit: contain;
+}
+
+.obj-cov {
+  object-fit: cover;
+}
+
+.obj-none {
+  object-fit: none;
+}
+
+.obj-pos-t {
+  object-position: top;
+}
+
+.obj-pos-r {
+  object-position: right;
+}
+
+.obj-pos-b {
+  object-position: bottom;
+}
+
+.obj-pos-left {
+  object-position: left;
 }
 
 html {
@@ -5427,6 +5479,22 @@ body {
     padding-right: 100px;
   }
 
+  .xl__p-10p {
+    padding: 10%;
+  }
+
+  .xl__p-20p {
+    padding: 20%;
+  }
+
+  .xl__p-30p {
+    padding: 30%;
+  }
+
+  .xl__p-50p {
+    padding: 50%;
+  }
+
   .xl__ml-a {
     margin-left: auto;
   }
@@ -5543,8 +5611,44 @@ body {
     position: absolute;
   }
 
+  .xl__pos-s {
+    position: static;
+  }
+
   .xl__pos-f {
     position: fixed;
+  }
+
+  .xl__obj-f {
+    object-fit: fill;
+  }
+
+  .xl__obj-c {
+    object-fit: contain;
+  }
+
+  .xl__obj-cov {
+    object-fit: cover;
+  }
+
+  .xl__obj-none {
+    object-fit: none;
+  }
+
+  .xl__obj-pos-t {
+    object-position: top;
+  }
+
+  .xl__obj-pos-r {
+    object-position: right;
+  }
+
+  .xl__obj-pos-b {
+    object-position: bottom;
+  }
+
+  .xl__obj-pos-left {
+    object-position: left;
   }
 
   .xl__icon--xs,
@@ -7405,6 +7509,22 @@ body {
     padding-right: 100px;
   }
 
+  .lg__p-10p {
+    padding: 10%;
+  }
+
+  .lg__p-20p {
+    padding: 20%;
+  }
+
+  .lg__p-30p {
+    padding: 30%;
+  }
+
+  .lg__p-50p {
+    padding: 50%;
+  }
+
   .lg__ml-a {
     margin-left: auto;
   }
@@ -7521,8 +7641,44 @@ body {
     position: absolute;
   }
 
+  .lg__pos-s {
+    position: static;
+  }
+
   .lg__pos-f {
     position: fixed;
+  }
+
+  .lg__obj-f {
+    object-fit: fill;
+  }
+
+  .lg__obj-c {
+    object-fit: contain;
+  }
+
+  .lg__obj-cov {
+    object-fit: cover;
+  }
+
+  .lg__obj-none {
+    object-fit: none;
+  }
+
+  .lg__obj-pos-t {
+    object-position: top;
+  }
+
+  .lg__obj-pos-r {
+    object-position: right;
+  }
+
+  .lg__obj-pos-b {
+    object-position: bottom;
+  }
+
+  .lg__obj-pos-left {
+    object-position: left;
   }
 
   .lg__icon--xs,
@@ -8981,6 +9137,22 @@ body {
     padding-right: 100px;
   }
 
+  .md__p-10p {
+    padding: 10%;
+  }
+
+  .md__p-20p {
+    padding: 20%;
+  }
+
+  .md__p-30p {
+    padding: 30%;
+  }
+
+  .md__p-50p {
+    padding: 50%;
+  }
+
   .md__ml-a {
     margin-left: auto;
   }
@@ -9097,8 +9269,44 @@ body {
     position: absolute;
   }
 
+  .md__pos-s {
+    position: static;
+  }
+
   .md__pos-f {
     position: fixed;
+  }
+
+  .md__obj-f {
+    object-fit: fill;
+  }
+
+  .md__obj-c {
+    object-fit: contain;
+  }
+
+  .md__obj-cov {
+    object-fit: cover;
+  }
+
+  .md__obj-none {
+    object-fit: none;
+  }
+
+  .md__obj-pos-t {
+    object-position: top;
+  }
+
+  .md__obj-pos-r {
+    object-position: right;
+  }
+
+  .md__obj-pos-b {
+    object-position: bottom;
+  }
+
+  .md__obj-pos-left {
+    object-position: left;
   }
 
   .md__icon--xs,
@@ -10872,6 +11080,22 @@ body {
     padding-right: 100px;
   }
 
+  .sm__p-10p {
+    padding: 10%;
+  }
+
+  .sm__p-20p {
+    padding: 20%;
+  }
+
+  .sm__p-30p {
+    padding: 30%;
+  }
+
+  .sm__p-50p {
+    padding: 50%;
+  }
+
   .sm__ml-a {
     margin-left: auto;
   }
@@ -10988,8 +11212,44 @@ body {
     position: absolute;
   }
 
+  .sm__pos-s {
+    position: static;
+  }
+
   .sm__pos-f {
     position: fixed;
+  }
+
+  .sm__obj-f {
+    object-fit: fill;
+  }
+
+  .sm__obj-c {
+    object-fit: contain;
+  }
+
+  .sm__obj-cov {
+    object-fit: cover;
+  }
+
+  .sm__obj-none {
+    object-fit: none;
+  }
+
+  .sm__obj-pos-t {
+    object-position: top;
+  }
+
+  .sm__obj-pos-r {
+    object-position: right;
+  }
+
+  .sm__obj-pos-b {
+    object-position: bottom;
+  }
+
+  .sm__obj-pos-left {
+    object-position: left;
   }
 
   .sm__icon--xs,
