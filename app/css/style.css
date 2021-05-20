@@ -3998,6 +3998,11 @@ body {
   fill: #ffa800;
 }
 
+.img-size {
+  top: 0;
+  left: 0;
+}
+
 @-moz-keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
