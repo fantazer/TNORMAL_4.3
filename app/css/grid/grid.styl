@@ -54,13 +54,26 @@ calcGap(size1,size2,size3)
 		+below(640px)
 			grid-gap size3 px
 
+/*for $gridGapItem in $gridGap
+	.f-gap-{$gridGapItem}
+		calcFlexGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])*/
+
 for $gridGapItem in $gridGap
 	.f-gap-{$gridGapItem}
-		calcFlexGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
+		gap($gridGapItem px)
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__f-gap-{$gridGapItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				gap($gridGapItem px)
+
 
 for $gridGapItem in $gridGap
 	.gap-{$gridGapItem}
-		calcGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
+		grid-gap $gridGapItem px
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__gap-{$gridGapItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+					grid-gap $gridGapItem px
 // calc gap === end
 
 // calc width
