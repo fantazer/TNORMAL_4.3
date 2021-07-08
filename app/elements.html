@@ -28,12 +28,7 @@
 
 <body>
     <style type="text/css">
-        .divider {
-        		margin: 40px 0;
-        		display: block;
-        	}
-        	
-        	.element-list-svg {
+        .element-list-svg {
         		display: flex;
         		justify-content: center;
         		align-items: center;
@@ -62,16 +57,22 @@
         		text-align: center;
         	}
     </style>
-    <div class="main-cont main-cont--all">
+    <div class="main-cont">
+        <H1>#Типографика</H1>
+        <h2>##Заголовки</h2>
         <h1>Заголовок h1</h1>
         <h2>Заголовок h2</h2>
         <h3>Заголовок h3</h3>
         <h4>Заголовок h4</h4>
         <h5>Заголовок h5</h5>
-        <div class="divider"></div>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Текст</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">Location config: app/css/variable/config/_typography.styl</div>
         <div class="text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque consequuntur deleniti ducimus eius itaque iure laborum laudantium natus perspiciatis.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad, alias aliquid amet autem deleniti dolor eligendi eos esse, fuga incidunt itaque iure minus officiis quasi quo sequi suscipit tempora tenetur totam. Alias aperiam commodi deserunt
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                <a class="link--mark mr-12" href="#">This is mark link</a>. Accusamus atque consequuntur deleniti ducimus eius itaque iure laborum laudantium natus perspiciatis.</p>
+            <p>Lorem ipsum dolor sit amet,
+                <a class="link--text mr-12" href="#">This is decoration link</a>consectetur adipisicing elit. Ab ad, alias aliquid amet autem deleniti dolor eligendi eos esse, fuga incidunt itaque iure minus officiis quasi quo sequi suscipit tempora tenetur totam. Alias aperiam commodi deserunt
                 facilis mollitia nobis provident.</p>
             <ul>
                 <li>пункт 1</li>
@@ -81,7 +82,242 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit, omnis velit voluptate. Ab ad adipisci beatae consectetur consequuntur cum cumque delectus dolor doloremque ducimus earum error eveniet hic illum
                 incidunt iste labore laborum molestiae nemo non, pariatur, possimus qui quia quisquam rem sit, suscipit tempore unde.</p>
         </div>
-        <div class="divider"></div>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Text Size</h2>
+        <h3>###Text Size later naming</h3>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.type--(xl,lgx,lg,mdx,md,main,sm,xs)</div>
+        <div class="text mb-48">
+            <div class="p type--xl">
+                <span class="type--w700 type--orange mr-12">.type--xl</span>This is simple text</div>
+            <div class="p type--lgx">
+                <span class="type--w700 type--orange mr-12">.type--lgx</span>This is simple text</div>
+            <div class="p type--lg">
+                <span class="type--w700 type--orange mr-12">.type--lg</span>This is simple text</div>
+            <div class="p type--mdx">
+                <span class="type--w700 type--orange mr-12">.type--mdx</span>This is simple text</div>
+            <div class="p type--md">
+                <span class="type--w700 type--orange mr-12">.type--md</span>This is simple text</div>
+            <div class="p type--main">
+                <span class="type--w700 type--orange mr-12">.type--main</span>This is simple text</div>
+            <div class="p type--sm">
+                <span class="type--w700 type--orange mr-12">.type--sm</span>This is simple text</div>
+            <div class="p type--xs">
+                <span class="type--w700 type--orange mr-12">.type--sm</span>This is simple text</div>
+        </div>
+        <h3>### Text size number naming</h3>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.(xl,lg,md,sm,xs)__type--#name#</div>
+        <div class="text">
+            <div class="p type--64">
+                <span class="type--w700 type--orange mr-12">.type--64</span>This is simple text</div>
+            <div class="p type--44">
+                <span class="type--w700 type--orange mr-12">.type--44</span>This is simple text</div>
+            <div class="p type--32">
+                <span class="type--w700 type--orange mr-12">.type--32</span>This is simple text</div>
+            <div class="p type--24">
+                <span class="type--w700 type--orange mr-12">.type--24</span>This is simple text</div>
+            <div class="p type--20">
+                <span class="type--w700 type--orange mr-12">.type--20</span>This is simple text</div>
+            <div class="p type--18">
+                <span class="type--w700 type--orange mr-12">.type--18</span>This is simple text</div>
+            <div class="p type--16">
+                <span class="type--w700 type--orange mr-12">.type--16</span>This is simple text</div>
+            <div class="p type--14">
+                <span class="type--w700 type--orange mr-12">.type--14</span>This is simple text</div>
+            <div class="p type--12">
+                <span class="type--w700 type--orange mr-12">.type--12</span>This is simple text</div>
+        </div>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Text align</h2>
+        <div class="text">
+            <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.(xl,lg,md,sm,xs)__type--#name#</div>
+            <p class="type--left">
+                <span class="type--w700 type--orange mr-12">.type--left</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+            <p class="type--mid">
+                <span class="type--w700 type--orange mr-12">.type--mid</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+            <p class="type--right">
+                <span class="type--w700 type--orange mr-12">.type--right</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        </div>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Text width</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.(xl,lg,md,sm,xs)__type--#name#</div>
+        <p class="type--w700">
+            <span class="type--orange mr-12">.type--w700</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        <p class="type--w600">
+            <span class="type--orange mr-12">.type--w600</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        <p class="type--w500">
+            <span class="type--orange mr-12">.type--w500</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        <p class="type--w400">
+            <span class="type--orange mr-12">.type--w400</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        <p class="type--w300">
+            <span class="type--orange mr-12">.type--w300</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,</p>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Text line height</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.type--lh-#name#</div>
+        <p class="type--lh-1">
+            <span class="type--orange mr-12 type--w700">.type--lh-1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus quaerat
+            quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?</p>
+        <p class="type--lh-1_2">
+            <span class="type--orange mr-12 type--w700">.type--lh-1_2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis deleniti deserunt dolore, ducimus earum esse facere id illum nam omnis quasi, quos reprehenderit tempora unde voluptas voluptatum! Debitis,
+            dignissimos doloribus labore nulla omnis quam voluptas voluptatum. Accusantium, eos.</p>
+        <p class="type--lh-1_4">
+            <span class="type--orange mr-12 type--w700">.type--lh-1_4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt error non! Dolorem expedita maxime nesciunt sunt voluptatibus. Accusamus ad adipisci aliquam, beatae cum cumque delectus est eum exercitationem
+            iste minus nesciunt non quaerat quia quidem quis quod repudiandae veritatis!</p>
+        <p class="type--lh-1_6">
+            <span class="type--orange mr-12 type--w700">.type--lh-1_6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A inventore minus nemo nisi vitae? Aperiam architecto hic illo labore odit qui repellendus, repudiandae similique tenetur. Aspernatur atque cumque cupiditate dolorem
+            ea ipsam labore, maiores nihil nulla quam recusandae sit tempora.</p>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Type color</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.type--#color name#</div>
+        <p class="type--typePrimary">
+            <span class="type--orange mr-12 type--w700">.type--typePrimary</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus
+            quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?</p>
+        <p class="type--typeSecondary">
+            <span class="type--orange mr-12 type--w700">.type--typeSecondary</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus
+            quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?</p>
+        <p class="type--typeDisable">
+            <span class="type--orange mr-12 type--w700">.type--typeDisable</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus
+            quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?</p>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Icon size</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.icon--(xl,lg,md,sm,xs) + .(xl,lg,md,sm,xs)__icon--(64,44,32,24,20,16,12)</div>
+        <div class="f f-aic gap-4">
+            <svg class="icon icon--64 xl__icon--12">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--lgx">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--lg">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--mdx">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--md">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--sm">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--xs">
+                <use xlink:href="#star-full"></use>
+            </svg>
+        </div>
+        <div class="el bor--graySnow bor-b bor msv-48"></div>
+        <h2>##Icon color</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">.icon--#color name#</div>
+        <div class="f f-aic gap-4">
+            <svg class="icon icon--32 icon--red">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--red">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--red">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--red">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--red">
+                <use xlink:href="#star-full"></use>
+            </svg>
+        </div>
+        <div class="f f-aic gap-4">
+            <svg class="icon icon--32 icon--orange">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--orange">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--orange">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--orange">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--orange">
+                <use xlink:href="#star-full"></use>
+            </svg>
+        </div>
+        <div class="f f-aic gap-4">
+            <svg class="icon icon--32 icon--yellow">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--yellow">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--yellow">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--yellow">
+                <use xlink:href="#star-full"></use>
+            </svg>
+            <svg class="icon icon--32 icon--yellow">
+                <use xlink:href="#star-full"></use>
+            </svg>
+        </div>
+        <h1>#Отступы</h1>
+        <h2>##Margin</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__m-#value#</span>- во все стороны</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mt-#value#</span>- вверх</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mr-#value#</span>- вправо</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mb-#value#</span>- вниз</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__ml-#value#</span>- влево</li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__msv-#value#</span>- вверх и низ</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__msh-#value#</span>- влево и вправо</li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mt-a</span>- вверх авто</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mr-a</span>- вправо авто</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__mb-a</span>- вниз авто</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)__ml-a</span>- влево авто</li>
+            </ul>
+        </div>
+        <h2>##Padding</h2>
+        <div class="p-12 type--w700 br-8 mb-12 bg--graySnow">
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_p-#value#</span>- во все стороны</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_pt-#value#</span>- вверх</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_pr-#value#</span>- вправо</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_pb-#value#</span>- вниз</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_pl-#value#</span>- влево</li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_psv-#value#</span>- вверх и вниз</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_psh-#value#</span>- влево и вправо</li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_p-#value#p</span>- во все стороны в процентах</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_psv-#value#p</span>- вверх и вниз в процентах</li>
+                <li>
+                    <span class="type--orange mr-12 type--w700">.(xl,lg,md,sm,xs)_psh-#value#p</span>- влево и вправо в процентах</li>
+            </ul>
+        </div>
         <h2>Grid fix</h2>
         <div class="g gap-16 g-12 lg__g-6 md__g-4 sm__g-2 mb-16">
             <div class="block br--12"></div>
@@ -110,7 +346,6 @@
             <div class="block br--12"></div>
             <div class="block br--12"></div>
         </div>
-        <div class="divider"></div>
         <h2>Grid cols</h2>
         <div class="row gap-16 mb-16">
             <div class="g-1-3 lg__g-1-12">
@@ -128,7 +363,6 @@
                 <div class="block br--12"></div>
             </div>
         </div>
-        <div class="divider"></div>
         <h2>Grid width</h2>
         <div class="f f-jcsb gap-16 md__fw mb-16">
             <div class="block br--12 w60 md__w100"></div>
@@ -138,7 +372,6 @@
             <div class="block br--12 w80 md__w100"></div>
             <div class="block br--12 w15 md__w100"></div>
         </div>
-        <div class="divider"></div>
         <h2>Buttons</h2>
         <div class="f fw gap-12">
             <div class="btn btn--md btn--mark">Стандартная</div>
@@ -153,7 +386,6 @@
                 </div>
             </div>
         </div>
-        <div class="divider"></div>
         <div class="f fw gap-12">
             <div class="btn btn--sm btn--mark">Стандартная</div>
             <div class="btn btn--sm btn--mark disable">Неактивная</div>
@@ -252,11 +484,9 @@
                 <div class="switch disabled"></div>
             </div>
         </div>
-        <div class="divider"></div>
         <a class="link--mark" href="#">Цветная ссылка</a>
         <a class="link--main" href="#">Новая ссылка</a>
         <a class="link--text" href="#">Ссылка в тексте</a>
-        <div class="divider"></div>
         <div class="forms">
             <div class="input-row error mb-16">
                 <div class="type--main type--w700 mb-12">Название поля</div>
@@ -309,7 +539,6 @@
                 </label>
             </div>
         </div>
-        <div class="divider"></div>
         <div class="dropdown">
             <input type="hidden" name="name" value="0" />
             <div class="dropdown-current">
@@ -324,7 +553,6 @@
                 <div class="dropdown-menu__el" data-value="#">Значение 3</div>
             </div>
         </div>
-        <div class="divider"></div>
         <div class="element-list-svg">
             <div class="element-list-svg__icon">
                 <svg class="icon-el">

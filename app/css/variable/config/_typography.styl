@@ -5,7 +5,7 @@ for $listIconItem in $listIcon
 		width $listIconItem[1] px
 		height $listIconItem[1] px
 	for $windowSizeItem in $windowSize
-		.{$windowSizeItem[0]}__icon--{$listIconItem[0]},.{$windowSizeItem[0]}__icon--{$listIconItem[1]}
+		.{$windowSizeItem[0]}__icon--{$listIconItem[1]}
 			@media only screen and (max-width: $windowSizeItem[1]px)
 				width $listIconItem[1] px
 				height $listIconItem[1] px
@@ -24,16 +24,22 @@ for $listIconItem in $listIcon
 
 // calc font size
 for $listTypeItem in $listType
-	.type--{$listTypeItem[0]},.type--{$listTypeItem[1]}
+	.type--{$listTypeItem[0]}
 		+below(768px)
 			font-size $listTypeItem[2] px
 		if $listTypeItem[3]
 			+below(640px)
 				font-size $listTypeItem[3] px
 		font-size $listTypeItem[1] px
-		for $windowSizeItem in $windowSize
-			.{$windowSizeItem[0]}__type--{$listTypeItem[0]},.{$windowSizeItem[0]}__type--{$listTypeItem[1]}
-				font-size $listTypeItem[1] px
+
+for $listTypeItem in $listTypeSimple
+	.type--{$listTypeItem}
+		font-size $listTypeItem px
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__type--{$listTypeItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				font-size $listTypeItem px
+
 // calc font size === end
 
 // calc font weight

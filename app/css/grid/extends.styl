@@ -100,10 +100,24 @@ for $windowSizeItem in $windowSize
 for $paddingPercentItem in $paddingPercent
 	.p-{$paddingPercentItem}p
 		padding ($paddingPercentItem)%
+	.psv-{$paddingPercentItem}p
+		padding-top ($paddingPercentItem)%
+		padding-bottom ($paddingPercentItem)%
+	.phv-{$paddingPercentItem}p
+		padding-left ($paddingPercentItem)%
+		padding-right ($paddingPercentItem)%
 	for $windowSizeItem in $windowSize
 		.{$windowSizeItem[0]}__p-{$paddingPercentItem}p
 			@media only screen and (max-width: $windowSizeItem[1]px)
 				padding ($paddingPercentItem)%
+		.{$windowSizeItem[0]}__psv-{$paddingPercentItem}p
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				padding-top ($paddingPercentItem)%
+				padding-bottom ($paddingPercentItem)%
+		.{$windowSizeItem[0]}__phv-{$paddingPercentItem}p
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				padding-left ($paddingPercentItem)%
+				padding-right ($paddingPercentItem)%
 // extend percent === end
 
 //simple extend

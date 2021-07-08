@@ -4,11 +4,11 @@ include block_html/_style.pug
 include block_html/_include.pug
 include block_html/_svg.pug
 
+mixin divider()
+	.el.bor--graySnow.bor-b.bor.msv-48
+
 style(type='text/css').
-	.divider {
-		margin: 40px 0;
-		display: block;
-	}
+
 
 	.element-list-svg {
 		display: flex;
@@ -38,7 +38,11 @@ style(type='text/css').
 	.element-list-svg__name{
 		text-align: center;
 	}
-.main-cont.main-cont--all
+.main-cont
+
+	H1 #Типографика
+
+	h2 ##Заголовки
 
 	h1 Заголовок h1
 	h2 Заголовок h2
@@ -46,17 +50,143 @@ style(type='text/css').
 	h4 Заголовок h4
 	h5 Заголовок h5
 
-	.divider
+	+divider()
+
+	h2 ##Текст
+	.p-12.type--w700.br-8.mb-12.bg--graySnow Location config: app/css/variable/config/_typography.styl
 	.text
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque consequuntur deleniti ducimus eius itaque iure laborum laudantium natus perspiciatis.
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad, alias aliquid amet autem deleniti dolor eligendi eos esse, fuga incidunt itaque iure minus officiis quasi quo sequi suscipit tempora tenetur totam. Alias aperiam commodi deserunt facilis mollitia nobis provident.
+		p Lorem ipsum dolor sit amet, consectetur adipisicing #[a(href="#").link--mark.mr-12 This is mark link]. Accusamus atque consequuntur deleniti ducimus eius itaque iure laborum laudantium natus perspiciatis.
+		p Lorem ipsum dolor sit amet, #[a(href="#").link--text.mr-12 This is decoration link] consectetur adipisicing elit. Ab ad, alias aliquid amet autem deleniti dolor eligendi eos esse, fuga incidunt itaque iure minus officiis quasi quo sequi suscipit tempora tenetur totam. Alias aperiam commodi deserunt facilis mollitia nobis provident.
 		ul
 			li пункт 1
 			li пункт 2
 			li пункт 3
 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit, omnis velit voluptate. Ab ad adipisci beatae consectetur consequuntur cum cumque delectus dolor doloremque ducimus earum error eveniet hic illum incidunt iste labore laborum molestiae nemo non, pariatur, possimus qui quia quisquam rem sit, suscipit tempore unde.
 
-	.divider
+	+divider()
+	h2 ##Text Size
+	h3 ###Text Size later naming
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .type--(xl,lgx,lg,mdx,md,main,sm,xs)
+	.text.mb-48
+		.p.type--xl #[span.type--w700.type--orange.mr-12 .type--xl] This is simple text
+		.p.type--lgx #[span.type--w700.type--orange.mr-12 .type--lgx] This is simple text
+		.p.type--lg #[span.type--w700.type--orange.mr-12 .type--lg] This is simple text
+		.p.type--mdx #[span.type--w700.type--orange.mr-12 .type--mdx] This is simple text
+		.p.type--md #[span.type--w700.type--orange.mr-12 .type--md] This is simple text
+		.p.type--main #[span.type--w700.type--orange.mr-12 .type--main] This is simple text
+		.p.type--sm #[span.type--w700.type--orange.mr-12 .type--sm] This is simple text
+		.p.type--xs #[span.type--w700.type--orange.mr-12 .type--sm] This is simple text
+
+	h3 ### Text size number naming
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .(xl,lg,md,sm,xs)__type--#name#
+	.text
+		.p.type--64 #[span.type--w700.type--orange.mr-12 .type--64] This is simple text
+		.p.type--44 #[span.type--w700.type--orange.mr-12 .type--44] This is simple text
+		.p.type--32 #[span.type--w700.type--orange.mr-12 .type--32] This is simple text
+		.p.type--24 #[span.type--w700.type--orange.mr-12 .type--24] This is simple text
+		.p.type--20 #[span.type--w700.type--orange.mr-12 .type--20] This is simple text
+		.p.type--18 #[span.type--w700.type--orange.mr-12 .type--18] This is simple text
+		.p.type--16 #[span.type--w700.type--orange.mr-12 .type--16] This is simple text
+		.p.type--14 #[span.type--w700.type--orange.mr-12 .type--14] This is simple text
+		.p.type--12 #[span.type--w700.type--orange.mr-12 .type--12] This is simple text
+
+	+divider()
+	h2 ##Text align
+	.text
+		.p-12.type--w700.br-8.mb-12.bg--graySnow .(xl,lg,md,sm,xs)__type--#name#
+		p.type--left #[span.type--w700.type--orange.mr-12 .type--left] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+		p.type--mid #[span.type--w700.type--orange.mr-12 .type--mid] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+		p.type--right #[span.type--w700.type--orange.mr-12 .type--right] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+
+	+divider()
+	h2 ##Text width
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .(xl,lg,md,sm,xs)__type--#name#
+	p.type--w700 #[span.type--orange.mr-12 .type--w700] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+	p.type--w600 #[span.type--orange.mr-12 .type--w600] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+	p.type--w500 #[span.type--orange.mr-12 .type--w500] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+	p.type--w400 #[span.type--orange.mr-12 .type--w400] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+	p.type--w300 #[span.type--orange.mr-12 .type--w300] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate delectus fuga impedit,
+
+	+divider()
+	h2 ##Text line height
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .type--lh-#name#
+
+	p.type--lh-1 #[span.type--orange.mr-12.type--w700 .type--lh-1] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?
+	p.type--lh-1_2 #[span.type--orange.mr-12.type--w700 .type--lh-1_2] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis deleniti deserunt dolore, ducimus earum esse facere id illum nam omnis quasi, quos reprehenderit tempora unde voluptas voluptatum! Debitis, dignissimos doloribus labore nulla omnis quam voluptas voluptatum. Accusantium, eos.
+	p.type--lh-1_4 #[span.type--orange.mr-12.type--w700 .type--lh-1_4] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt error non! Dolorem expedita maxime nesciunt sunt voluptatibus. Accusamus ad adipisci aliquam, beatae cum cumque delectus est eum exercitationem iste minus nesciunt non quaerat quia quidem quis quod repudiandae veritatis!
+	p.type--lh-1_6 #[span.type--orange.mr-12.type--w700 .type--lh-1_6] Lorem ipsum dolor sit amet, consectetur adipisicing elit. A inventore minus nemo nisi vitae? Aperiam architecto hic illo labore odit qui repellendus, repudiandae similique tenetur. Aspernatur atque cumque cupiditate dolorem ea ipsam labore, maiores nihil nulla quam recusandae sit tempora.
+
+	+divider()
+	h2 ##Type color
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .type--#color name#
+	p.type--typePrimary #[span.type--orange.mr-12.type--w700 .type--typePrimary] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?
+	p.type--typeSecondary #[span.type--orange.mr-12.type--w700 .type--typeSecondary] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?
+	p.type--typeDisable #[span.type--orange.mr-12.type--w700 .type--typeDisable] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut consectetur consequatur cupiditate dolore dolores, ea error explicabo fuga incidunt laboriosam laudantium maiores, minus nam possimus quaerat quis reiciendis sed sint? Ducimus fuga ipsam, laboriosam nihil qui repudiandae voluptas?
+
+	+divider()
+	h2 ##Icon size
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .icon--(xl,lg,md,sm,xs) + .(xl,lg,md,sm,xs)__icon--(64,44,32,24,20,16,12)
+	.f.f-aic.gap-4
+		+icon("star-full","icon icon--64 xl__icon--12")
+		+icon("star-full","icon icon--lgx")
+		+icon("star-full","icon icon--lg")
+		+icon("star-full","icon icon--mdx")
+		+icon("star-full","icon icon--md")
+		+icon("star-full","icon icon--sm")
+		+icon("star-full","icon icon--xs")
+
+	+divider()
+	h2 ##Icon color
+	.p-12.type--w700.br-8.mb-12.bg--graySnow .icon--#color name#
+	.f.f-aic.gap-4
+		- for (var i=0;i<5;i++)
+			+icon("star-full","icon icon--32 icon--red")
+	.f.f-aic.gap-4
+		- for (var i=0;i<5;i++)
+			+icon("star-full","icon icon--32 icon--orange")
+	.f.f-aic.gap-4
+		- for (var i=0;i<5;i++)
+			+icon("star-full","icon icon--32 icon--yellow")
+
+
+	h1 #Отступы
+	h2 ##Margin
+	.p-12.type--w700.br-8.mb-12.bg--graySnow
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__m-#value#] - во все стороны
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mt-#value#] - вверх
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mr-#value#] - вправо
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mb-#value#] - вниз
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__ml-#value#] - влево
+
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__msv-#value#] - вверх и низ
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__msh-#value#] - влево и вправо
+
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mt-a] - вверх авто
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mr-a] - вправо авто
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__mb-a] - вниз авто
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)__ml-a] - влево авто
+
+	h2 ##Padding
+	.p-12.type--w700.br-8.mb-12.bg--graySnow
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_p-#value#] - во все стороны
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_pt-#value#] - вверх
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_pr-#value#] - вправо
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_pb-#value#] - вниз
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_pl-#value#] - влево
+
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_psv-#value#] - вверх и вниз
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_psh-#value#] - влево и вправо
+
+		ul
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_p-#value#p] - во все стороны в процентах
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_psv-#value#p] - вверх и вниз в процентах
+			li #[span.type--orange.mr-12.type--w700 .(xl,lg,md,sm,xs)_psh-#value#p] - влево и вправо в процентах
+
 
 	h2 Grid fix
 	.g.gap-16.g-12.lg__g-6.md__g-4.sm__g-2.mb-16
@@ -69,7 +199,7 @@ style(type='text/css').
 		- for (var i=0;i<3;i++)
 			.block.br--12
 
-	.divider
+
 
 	h2 Grid cols
 	.row.gap-16.mb-16
@@ -82,7 +212,7 @@ style(type='text/css').
 			.block.br--12
 		.g-6-12.lg__g-1-12
 			.block.br--12
-	.divider
+
 
 	h2 Grid width
 	.f.f-jcsb.gap-16.md__fw.mb-16
@@ -93,7 +223,7 @@ style(type='text/css').
 		.block.br--12.w80.md__w100
 		.block.br--12.w15.md__w100
 
-	.divider
+
 
 	h2 Buttons
 	.f.fw.gap-12
@@ -105,7 +235,7 @@ style(type='text/css').
 				span C  иконкой
 				+icon("arrow-right","icon icon--sm")
 
-	.divider
+
 
 	.f.fw.gap-12
 		.btn.btn--sm.btn--mark Стандартная
@@ -141,13 +271,13 @@ style(type='text/css').
 			.switch.disabled
 
 
-	.divider
+
 	a(href="#").link--mark Цветная ссылка
 	a(href="#").link--main Новая ссылка
 	a(href="#").link--text Ссылка в тексте
 
 
-	.divider
+
 	.forms
 		.input-row.error.mb-16
 			.type--main.type--w700.mb-12 Название поля
@@ -180,7 +310,7 @@ style(type='text/css').
 
 		+checkbox('Я ознакомился с <a href="#">политикой конфиденциальности</a>, <a href="#"> публичной офертой</a> и даю согласие на обработку моих персональных данных')
 
-	.divider
+
 	.dropdown
 		input(type="hidden" name="name" value="0")
 		.dropdown-current
@@ -191,7 +321,7 @@ style(type='text/css').
 			.dropdown-menu__el(data-value="#") Значение 2
 			.dropdown-menu__el(data-value="#") Значение 3
 
-	.divider
+
 	.element-list-svg
 		each item in svgArray
 			.element-list-svg__icon
